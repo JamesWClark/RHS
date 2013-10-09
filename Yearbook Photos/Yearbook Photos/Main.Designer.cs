@@ -24,18 +24,19 @@
         /// </summary>
         private void InitializeComponent() {
             this.lvCurrent = new System.Windows.Forms.ListView();
-            this.lvExport = new System.Windows.Forms.ListView();
             this.lvCurrent_Last = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvCurrent_First = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvCurrent_Grade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvExport = new System.Windows.Forms.ListView();
+            this.lvExport_Last = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvExport_First = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvExport_Grade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExport = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.pnlImage = new System.Windows.Forms.Panel();
-            this.lvExport_Last = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvExport_First = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvExport_Grade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblStub = new System.Windows.Forms.Label();
+            this.comboYear = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lvCurrent
@@ -44,13 +45,24 @@
             this.lvCurrent_Last,
             this.lvCurrent_First,
             this.lvCurrent_Grade});
-            this.lvCurrent.Location = new System.Drawing.Point(13, 49);
+            this.lvCurrent.Location = new System.Drawing.Point(12, 148);
             this.lvCurrent.Name = "lvCurrent";
             this.lvCurrent.Size = new System.Drawing.Size(175, 364);
             this.lvCurrent.TabIndex = 0;
             this.lvCurrent.UseCompatibleStateImageBehavior = false;
             this.lvCurrent.View = System.Windows.Forms.View.Details;
-            this.lvCurrent.SelectedIndexChanged += new System.EventHandler(this.lvCurrent_SelectedIndexChanged);
+            // 
+            // lvCurrent_Last
+            // 
+            this.lvCurrent_Last.Text = "Last";
+            // 
+            // lvCurrent_First
+            // 
+            this.lvCurrent_First.Text = "First";
+            // 
+            // lvCurrent_Grade
+            // 
+            this.lvCurrent_Grade.Text = "Grade";
             // 
             // lvExport
             // 
@@ -65,17 +77,17 @@
             this.lvExport.UseCompatibleStateImageBehavior = false;
             this.lvExport.View = System.Windows.Forms.View.Details;
             // 
-            // lvCurrent_Last
+            // lvExport_Last
             // 
-            this.lvCurrent_Last.Text = "Last";
+            this.lvExport_Last.Text = "Last";
             // 
-            // lvCurrent_First
+            // lvExport_First
             // 
-            this.lvCurrent_First.Text = "First";
+            this.lvExport_First.Text = "First";
             // 
-            // lvCurrent_Grade
+            // lvExport_Grade
             // 
-            this.lvCurrent_Grade.Text = "Grade";
+            this.lvExport_Grade.Text = "Grade";
             // 
             // btnExport
             // 
@@ -88,7 +100,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(195, 13);
+            this.btnAdd.Location = new System.Drawing.Point(309, 45);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 3;
@@ -111,18 +123,6 @@
             this.pnlImage.Size = new System.Drawing.Size(172, 228);
             this.pnlImage.TabIndex = 5;
             // 
-            // lvExport_Last
-            // 
-            this.lvExport_Last.Text = "Last";
-            // 
-            // lvExport_First
-            // 
-            this.lvExport_First.Text = "First";
-            // 
-            // lvExport_Grade
-            // 
-            this.lvExport_Grade.Text = "Grade";
-            // 
             // lblStub
             // 
             this.lblStub.AutoSize = true;
@@ -132,11 +132,20 @@
             this.lblStub.TabIndex = 6;
             this.lblStub.Text = "v 1.0";
             // 
+            // comboYear
+            // 
+            this.comboYear.FormattingEnabled = true;
+            this.comboYear.Location = new System.Drawing.Point(12, 12);
+            this.comboYear.Name = "comboYear";
+            this.comboYear.Size = new System.Drawing.Size(121, 21);
+            this.comboYear.TabIndex = 7;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.comboYear);
             this.Controls.Add(this.lblStub);
             this.Controls.Add(this.pnlImage);
             this.Controls.Add(this.btnRemove);
@@ -167,6 +176,7 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Panel pnlImage;
         private System.Windows.Forms.Label lblStub;
+        private System.Windows.Forms.ComboBox comboYear;
     }
 }
 
