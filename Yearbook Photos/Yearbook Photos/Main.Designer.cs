@@ -42,6 +42,8 @@
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearchMessage = new System.Windows.Forms.Label();
+            this.btnSelectAll_lvCurrent = new System.Windows.Forms.Button();
+            this.btnSelectAll_lvExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,12 +57,14 @@
             this.lvCurrent.FullRowSelect = true;
             this.lvCurrent.Location = new System.Drawing.Point(12, 112);
             this.lvCurrent.Name = "lvCurrent";
-            this.lvCurrent.Size = new System.Drawing.Size(250, 400);
+            this.lvCurrent.Size = new System.Drawing.Size(250, 380);
             this.lvCurrent.TabIndex = 0;
             this.lvCurrent.UseCompatibleStateImageBehavior = false;
             this.lvCurrent.View = System.Windows.Forms.View.Details;
             this.lvCurrent.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvCurrent_ColumnClick);
+            this.lvCurrent.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvCurrent_ItemSelectionChanged);
             this.lvCurrent.SelectedIndexChanged += new System.EventHandler(this.lvCurrent_SelectedIndexChanged);
+            this.lvCurrent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvCurrent_KeyDown);
             // 
             // lvCurrent_Last
             // 
@@ -90,10 +94,12 @@
             this.lvExport.FullRowSelect = true;
             this.lvExport.Location = new System.Drawing.Point(522, 112);
             this.lvExport.Name = "lvExport";
-            this.lvExport.Size = new System.Drawing.Size(250, 400);
+            this.lvExport.Size = new System.Drawing.Size(250, 380);
             this.lvExport.TabIndex = 1;
             this.lvExport.UseCompatibleStateImageBehavior = false;
             this.lvExport.View = System.Windows.Forms.View.Details;
+            this.lvExport.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvExport_ItemSelectionChanged);
+            this.lvExport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvExport_KeyDown);
             // 
             // lvExport_Last
             // 
@@ -115,7 +121,8 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(697, 83);
+            this.btnExport.Enabled = false;
+            this.btnExport.Location = new System.Drawing.Point(697, 85);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
             this.btnExport.TabIndex = 2;
@@ -159,6 +166,7 @@
             this.comboYear.Name = "comboYear";
             this.comboYear.Size = new System.Drawing.Size(121, 21);
             this.comboYear.TabIndex = 7;
+            this.comboYear.SelectedIndexChanged += new System.EventHandler(this.comboYear_SelectedIndexChanged);
             // 
             // pnlImage
             // 
@@ -196,11 +204,33 @@
             this.lblSearchMessage.Size = new System.Drawing.Size(0, 13);
             this.lblSearchMessage.TabIndex = 11;
             // 
+            // btnSelectAll_lvCurrent
+            // 
+            this.btnSelectAll_lvCurrent.Location = new System.Drawing.Point(187, 498);
+            this.btnSelectAll_lvCurrent.Name = "btnSelectAll_lvCurrent";
+            this.btnSelectAll_lvCurrent.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAll_lvCurrent.TabIndex = 12;
+            this.btnSelectAll_lvCurrent.Text = "Select All";
+            this.btnSelectAll_lvCurrent.UseVisualStyleBackColor = true;
+            this.btnSelectAll_lvCurrent.Click += new System.EventHandler(this.btnSelectAll_lvCurrent_Click);
+            // 
+            // btnSelectAll_lvExport
+            // 
+            this.btnSelectAll_lvExport.Location = new System.Drawing.Point(522, 499);
+            this.btnSelectAll_lvExport.Name = "btnSelectAll_lvExport";
+            this.btnSelectAll_lvExport.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAll_lvExport.TabIndex = 13;
+            this.btnSelectAll_lvExport.Text = "Select All";
+            this.btnSelectAll_lvExport.UseVisualStyleBackColor = true;
+            this.btnSelectAll_lvExport.Click += new System.EventHandler(this.btnSelectAll_lvExport_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.btnSelectAll_lvExport);
+            this.Controls.Add(this.btnSelectAll_lvCurrent);
             this.Controls.Add(this.lblSearchMessage);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblSearch);
@@ -213,6 +243,7 @@
             this.Controls.Add(this.lvExport);
             this.Controls.Add(this.lvCurrent);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yearbook Photos";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).EndInit();
@@ -242,6 +273,8 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearchMessage;
+        private System.Windows.Forms.Button btnSelectAll_lvCurrent;
+        private System.Windows.Forms.Button btnSelectAll_lvExport;
     }
 }
 
