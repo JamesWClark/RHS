@@ -1,4 +1,8 @@
-﻿using System;
+﻿//performance on list views is rough
+//try to fix with http://stackoverflow.com/questions/6089674/whats-better-to-use-a-datagrid-or-listview-for-displaying-large-amounts-of-dat
+
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +24,7 @@ namespace Yearbook_Photos {
             InitializeComponent();
             sorter = new ListViewColumnSorter();
             lvCurrent.ListViewItemSorter = sorter;
-            rootPath = @"C:\LocalStorage\static";
+            rootPath = @"G:\YearbookPhotos";
             yearFolders = Directory.GetDirectories(rootPath); //the main directory has directories for every year
 
             //make a drop down list for sub directories of the main directory
@@ -39,7 +43,6 @@ namespace Yearbook_Photos {
             try {     
 
                 string selectedYear = rootPath + @"\" + comboYear.SelectedItem;
-                lblStub.Text = selectedYear;
 
                 //every year has additional directories if new data is added
 
@@ -60,7 +63,7 @@ namespace Yearbook_Photos {
                             //populate list view based on master record: list view: lastname, firstname, grade, id
                             ListViewItem item = new ListViewItem(values[4].Replace("\"", string.Empty)); //last name
                             item.SubItems.Add(values[2].Replace("\"", string.Empty)); //first name
-                            item.SubItems.Add(values[3].Replace("\"", string.Empty)); //grade
+                            item.SubItems.Add(values[3].Replace("\"", string.Empty).TrimStart(new char[] { '0' })); //grade
                             item.SubItems.Add(values[0].Replace("\"", string.Empty)); //id
                             item.ImageKey = subFolder;
                             lvCurrent.Items.Add(item);
@@ -82,23 +85,16 @@ namespace Yearbook_Photos {
         }
 
         private void SetDropDownOptions(string rootPath, string[] yearFolders) {
+            ArrayList items = new ArrayList();
             foreach (string s in yearFolders) {
+                items.Add(s);
+                
+            }
+            items.Reverse();
+            foreach (string s in items) {
                 comboYear.Items.Add(s.Replace(rootPath + @"\", String.Empty));
             }
-
-            //sort top of list by most recently modified directory
-            if (comboYear.Items.Count > 0) {
-                DateTime newest = new DateTime();
-                int count = 0;
-                foreach (string folder in yearFolders) {
-                    DateTime creationTime = Directory.GetCreationTime(folder);
-                    if (creationTime > newest) {
-                        newest = creationTime;
-                        comboYear.SelectedIndex = count;
-                        count++;
-                    }
-                }
-            }
+            comboYear.SelectedIndex = 0;
         }
 
         private void lvCurrent_ColumnClick(object sender, ColumnClickEventArgs e) {
@@ -153,9 +149,14 @@ namespace Yearbook_Photos {
             if (path != null) {
                 if (Directory.GetFiles(path).Length == 0) {
                     foreach (ListViewItem item in lvExport.Items) {
-                        string source = item.ImageKey + @"\" + item.SubItems[3].Text + ".jpg";
-                        string destination = fbd.SelectedPath + @"\" + item.SubItems[3].Text + ".jpg";
-                        File.Copy(source, destination);
+                        try {
+                            string source = item.ImageKey + @"\" + item.SubItems[3].Text + ".jpg";
+                            string destination = fbd.SelectedPath + @"\" + item.SubItems[3].Text + ".jpg";
+                            File.Copy(source, destination);
+                        } catch (Exception) {
+                            //skip that one, probably an IOException due to file exists already
+                            //HOWEVER, 2013-14 missed 1 file
+                        }
                     }
                 } else {
                     string error = "Files exist in the folder you selected.\nPlease create or select an empty folder and try again.";

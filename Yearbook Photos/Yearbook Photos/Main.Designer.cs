@@ -44,6 +44,7 @@
             this.lblSearchMessage = new System.Windows.Forms.Label();
             this.btnSelectAll_lvCurrent = new System.Windows.Forms.Button();
             this.btnSelectAll_lvExport = new System.Windows.Forms.Button();
+            this.lblLoadingCurrentList = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,11 +225,20 @@
             this.btnSelectAll_lvExport.UseVisualStyleBackColor = true;
             this.btnSelectAll_lvExport.Click += new System.EventHandler(this.btnSelectAll_lvExport_Click);
             // 
+            // lblLoadingCurrentList
+            // 
+            this.lblLoadingCurrentList.AutoSize = true;
+            this.lblLoadingCurrentList.Location = new System.Drawing.Point(140, 19);
+            this.lblLoadingCurrentList.Name = "lblLoadingCurrentList";
+            this.lblLoadingCurrentList.Size = new System.Drawing.Size(0, 13);
+            this.lblLoadingCurrentList.TabIndex = 14;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.lblLoadingCurrentList);
             this.Controls.Add(this.btnSelectAll_lvExport);
             this.Controls.Add(this.btnSelectAll_lvCurrent);
             this.Controls.Add(this.lblSearchMessage);
@@ -275,6 +285,7 @@
         private System.Windows.Forms.Label lblSearchMessage;
         private System.Windows.Forms.Button btnSelectAll_lvCurrent;
         private System.Windows.Forms.Button btnSelectAll_lvExport;
+        private System.Windows.Forms.Label lblLoadingCurrentList;
     }
 }
 
