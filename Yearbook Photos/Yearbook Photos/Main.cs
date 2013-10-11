@@ -144,10 +144,10 @@ namespace Yearbook_Photos {
         private void btnExport_Click(object sender, EventArgs e) {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             DialogResult result = fbd.ShowDialog();
-
-            string path = fbd.SelectedPath;
-            if (path != null) {
-                if (Directory.GetFiles(path).Length == 0) {
+            if (result == DialogResult.Cancel) {
+                //do nothing, cancel was clicked
+            } else if (fbd.SelectedPath != null) {
+                if (Directory.GetFiles(fbd.SelectedPath).Length == 0) {
                     foreach (ListViewItem item in lvExport.Items) {
                         try {
                             string source = item.ImageKey + @"\" + item.SubItems[3].Text + ".jpg";
@@ -159,8 +159,8 @@ namespace Yearbook_Photos {
                         }
                     }
                 } else {
-                    string error = "Files exist in the folder you selected.\nPlease create or select an empty folder and try again.";
-                    string caption = "Export Error";
+                    string error = "Files exist in the folder you selected.\n\nPlease create or select an empty folder and try again.";
+                    string caption = "Choose an Empty Folder";
                     MessageBox.Show(error, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -175,6 +175,7 @@ namespace Yearbook_Photos {
                 }
                 try {
                     lvCurrent.FindItemWithText(txtSearch.Text).Selected = true;
+                    lvCurrent.TopItem = lvCurrent.SelectedItems[0];
                 } catch (NullReferenceException) {
                     lblSearchMessage.Text = "A match was not found.";
                 }
@@ -218,7 +219,7 @@ namespace Yearbook_Photos {
                 }
             }
         }
-
+        /*
         private void btnSelectAll_lvCurrent_Click(object sender, EventArgs e) {
             lvCurrent.Focus();
             foreach (ListViewItem item in lvCurrent.Items) {
@@ -232,6 +233,7 @@ namespace Yearbook_Photos {
                 item.Selected = true;
             }
         }
+         * */
 
         private void lvCurrent_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.A && e.Control) {
