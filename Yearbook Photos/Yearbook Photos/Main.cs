@@ -16,28 +16,35 @@ using System.Windows.Forms;
 namespace Yearbook_Photos {
     public partial class Main : Form {
 
-        private string rootPath;
+        private const string rootPath = @"C:\LocalStorage\static"; //@"G:\YearbookPhotos";
         private string[] yearFolders;
         private ListViewColumnSorter sorter;
 
         public Main() {
             InitializeComponent();
-            sorter = new ListViewColumnSorter();
-            lvCurrent.ListViewItemSorter = sorter;
-            rootPath = @"G:\YearbookPhotos";
-            yearFolders = Directory.GetDirectories(rootPath); //the main directory has directories for every year
 
-            //make a drop down list for sub directories of the main directory
-            SetDropDownOptions(rootPath, yearFolders);
 
             //XDocument xdoc = XDocument.Load("settings");
             //rootPath = xdoc.Descendants("rootPath").First().Value;
         }
-
         private void Main_Load(object sender, EventArgs e) {
-            SetLists();
-        }
+            sorter = new ListViewColumnSorter();
+            lvCurrent.ListViewItemSorter = sorter;
 
+            try {
+                //the main directory has directories for every year
+                yearFolders = Directory.GetDirectories(rootPath);
+                //make a drop down list for sub directories of the main directory
+                SetDropDownOptions(rootPath, yearFolders);
+                //populate the list views
+                SetLists();
+            } catch (DirectoryNotFoundException) {
+                string error = "Your G: drive is not connected, or you do not have permission to view the G: drive yearbook photos.";
+                string caption = "G: Drive Unavailable";
+                MessageBox.Show(error, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit(new CancelEventArgs(true));
+            }
+        }
         private void SetLists() {
             //network connection may not be available, try
             try {     
@@ -88,7 +95,7 @@ namespace Yearbook_Photos {
             ArrayList items = new ArrayList();
             foreach (string s in yearFolders) {
                 items.Add(s);
-                
+
             }
             items.Reverse();
             foreach (string s in items) {
@@ -148,16 +155,24 @@ namespace Yearbook_Photos {
                 //do nothing, cancel was clicked
             } else if (fbd.SelectedPath != null) {
                 if (Directory.GetFiles(fbd.SelectedPath).Length == 0) {
+                    int count = 0;
                     foreach (ListViewItem item in lvExport.Items) {
                         try {
                             string source = item.ImageKey + @"\" + item.SubItems[3].Text + ".jpg";
-                            string destination = fbd.SelectedPath + @"\" + item.SubItems[3].Text + ".jpg";
+                            string destination = fbd.SelectedPath + @"\"
+                                + item.SubItems[1].Text + "-"       //firstname
+                                + item.Text + "-"                   //last name
+                                + item.SubItems[2].Text + "-"       //grade
+                                + item.SubItems[3].Text             //ID
+                                + ".jpg";
                             File.Copy(source, destination);
+                            count++;
                         } catch (Exception) {
                             //skip that one, probably an IOException due to file exists already
                             //HOWEVER, 2013-14 missed 1 file
                         }
                     }
+                    MessageBox.Show("Copied " + count + " picture" + (count == 1 ? "." : "s."));
                 } else {
                     string error = "Files exist in the folder you selected.\n\nPlease create or select an empty folder and try again.";
                     string caption = "Choose an Empty Folder";
