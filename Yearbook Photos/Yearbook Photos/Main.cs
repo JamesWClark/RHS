@@ -16,7 +16,8 @@ using System.Windows.Forms;
 namespace Yearbook_Photos {
     public partial class Main : Form {
 
-        private const string rootPath = @"C:\LocalStorage\static"; //@"G:\YearbookPhotos";
+        private const string VERSION = "1.0";
+        private const string rootPath = @"G:\YearbookPhotos"; //@"C:\LocalStorage\static";
         private string[] yearFolders;
         private ListViewColumnSorter sorter;
 
@@ -30,14 +31,14 @@ namespace Yearbook_Photos {
         private void Main_Load(object sender, EventArgs e) {
             sorter = new ListViewColumnSorter();
             lvCurrent.ListViewItemSorter = sorter;
+            lvExport.ListViewItemSorter = sorter;
 
             try {
                 //the main directory has directories for every year
                 yearFolders = Directory.GetDirectories(rootPath);
                 //make a drop down list for sub directories of the main directory
                 SetDropDownOptions(rootPath, yearFolders);
-                //populate the list views
-                SetLists();
+                //drop down options called SetLists(), so the lists are full now
             } catch (DirectoryNotFoundException) {
                 string error = "Your G: drive is not connected, or you do not have permission to view the G: drive yearbook photos.";
                 string caption = "G: Drive Unavailable";
@@ -104,7 +105,8 @@ namespace Yearbook_Photos {
             comboYear.SelectedIndex = 0;
         }
 
-        private void lvCurrent_ColumnClick(object sender, ColumnClickEventArgs e) {
+        private void lv_ColumnClick(object sender, ColumnClickEventArgs e) {
+            ListView listView = (ListView)sender;
             if (e.Column == sorter.SortColumn) {
                 if (sorter.Order == SortOrder.Ascending) {
                     sorter.Order = SortOrder.Descending;
@@ -115,7 +117,7 @@ namespace Yearbook_Photos {
                 sorter.SortColumn = e.Column;
                 sorter.Order = SortOrder.Ascending;
             }
-            lvCurrent.Sort();
+            listView.Sort();
         }
         private void lvCurrent_SelectedIndexChanged(object sender, EventArgs e) {
 
@@ -264,6 +266,14 @@ namespace Yearbook_Photos {
                     item.Selected = true;
                 }
             }
+        }
+
+        private void lblStub_MouseEnter(object sender, EventArgs e) {
+            lblStub.Text = "Yearbook Photos v " + VERSION + " authored by J.W. Clark for Rockhurst High School";
+        }
+
+        private void lblStub_MouseLeave(object sender, EventArgs e) {
+            lblStub.Text = "v " + VERSION;
         }
     }
 }

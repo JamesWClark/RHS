@@ -60,7 +60,7 @@
             this.lvCurrent.TabIndex = 0;
             this.lvCurrent.UseCompatibleStateImageBehavior = false;
             this.lvCurrent.View = System.Windows.Forms.View.Details;
-            this.lvCurrent.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvCurrent_ColumnClick);
+            this.lvCurrent.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lv_ColumnClick);
             this.lvCurrent.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvCurrent_ItemSelectionChanged);
             this.lvCurrent.SelectedIndexChanged += new System.EventHandler(this.lvCurrent_SelectedIndexChanged);
             this.lvCurrent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvCurrent_KeyDown);
@@ -97,6 +97,7 @@
             this.lvExport.TabIndex = 1;
             this.lvExport.UseCompatibleStateImageBehavior = false;
             this.lvExport.View = System.Windows.Forms.View.Details;
+            this.lvExport.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lv_ColumnClick);
             this.lvExport.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvExport_ItemSelectionChanged);
             this.lvExport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvExport_KeyDown);
             // 
@@ -157,6 +158,8 @@
             this.lblStub.Size = new System.Drawing.Size(31, 13);
             this.lblStub.TabIndex = 6;
             this.lblStub.Text = "v 1.0";
+            this.lblStub.MouseEnter += new System.EventHandler(this.lblStub_MouseEnter);
+            this.lblStub.MouseLeave += new System.EventHandler(this.lblStub_MouseLeave);
             // 
             // comboYear
             // 
