@@ -17,7 +17,7 @@ namespace Yearbook_Photos {
     public partial class Main : Form {
 
         private const string VERSION = "1.0";
-        private const string rootPath = @"G:\YearbookPhotos"; //@"C:\LocalStorage\static";
+        private const string rootPath = @"\\rockhurst.int\rhsadmindfs\RockShare\YearbookPhotos"; //@"G:\YearbookPhotos"; //@"C:\LocalStorage\static";
         private string[] yearFolders;
         private ListViewColumnSorter sorter;
 
