@@ -1,0 +1,15 @@
+<div id="calendar-feed"></div>
+<script src="https://www.rockhursths.edu/file/admin---webdev-documents/moment.min.js"></script>
+<script src="https://www.rockhursths.edu/file/admin---webdev-documents/jw-clark---web-assets/rhs-sports-calendar-feed.js"></script>
+<script>
+
+    var calendarId = 'rockhursths.edu_89fbs6i2rm7qncgk5ttjd95uao@group.calendar.google.com'; //get this value from calendar settings
+    var startMin = '2013-11-01'; //YYYY-MM-DD  <-- mandatory format
+    var startMax = '2014-04-01'; //YYYY-MM-DD  <-- mandatory format
+
+    $(document).ready(getCalendar(calendarId, startMin, startMax));
+
+</script>
+<noscript>
+    It seems JavaScript is disabled in your web browser. You may find the same information in the Master Calendar under Quick Links.
+</noscript>
