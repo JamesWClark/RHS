@@ -47,7 +47,7 @@ var entries = new Array();
 //putting today in the moment(today) constructor isn't necessary, but it allows for convenient testing such as
 //var today = moment('2013-11-24').format();
 //then the entire application shifts and operates around today as november 24th as in the example.
-var today = moment('2013-11-09').format();
+var today = moment().format();
 var startMin = moment(today).format('YYYY-MM-DD');
 var startMax = moment(today).add('days', 30).format('YYYY-MM-DD');
 
