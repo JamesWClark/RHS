@@ -17,7 +17,7 @@
 var processBegin = new Date().getMilliseconds();
 
 var MINIMUM_EVENTS = 4;
-var DAYS_TO_SEARCH_FORWARD = 30;
+var DAYS_TO_SEARCH_FORWARD = 7;
 
 var CALENDARS = [ //these are the IDs of each calendar, found under calendar settings in a Google account's Calendar system
      'calendar%40rockhursths.edu',                                                //School Calendar
@@ -42,14 +42,12 @@ var CALENDARS = [ //these are the IDs of each calendar, found under calendar set
 
 var feedsProcessedCount = 0;
 var dailyEventsCount = 0;
-
-var validEntries = new Array();
-var extraEntries = new Array();
+var entries = new Array();
 
 //putting today in the moment(today) constructor isn't necessary, but it allows for convenient testing such as
 //var today = moment('2013-11-24').format();
 //then the entire application shifts and operates around today as november 24th as in the example.
-var today = moment().format();
+var today = moment('2013-11-09').format();
 var startMin = moment(today).format('YYYY-MM-DD');
 var startMax = moment(today).add('days', 30).format('YYYY-MM-DD');
 
@@ -76,6 +74,8 @@ function processFeed(feed) {
     feedsProcessedCount++;
 
 	//why? google automatically injects the max-results=25 parameter into the calendar query
+	//so, if results = 46, you still only get 25 entries and the for loop hits null results
+	//alternate: ?alt=json&max-results=100&orderby=starttime&sortorder=ascending&singleevents=true
     var numResults = feed.openSearch$totalResults.$t; 
     if (numResults > 25)
         numResults = 25;
@@ -92,7 +92,7 @@ function processEntry(entry) {
     var e = getEntryBase(entry);
     e.startTime = entry.gd$when[0].startTime;
     e.endTime = entry.gd$when[0].endTime;
-    validateEntry(e);
+    entries.push(e);
 }
 function getEntryBase(entry) {
     var e = new Object();
@@ -103,44 +103,23 @@ function getEntryBase(entry) {
     e.link = entry.link[0].href;
     return e;
 }
-function validateEntry(entry) { //returns boolean
-    //compare on day, month, year only
-    var start = moment(entry.startTime).startOf('day').format();
-    var end = moment(entry.endTime).endOf('day').format();
-
-    if (start <= today && today <= end) {
-        validEntries.push(entry);
-        dailyEventsCount++;
-        return true;
-    } else {
-        extraEntries.push(entry);
-        return false;
-    }
-}
-function updateEntry(entries, entry) {
-    for (var i = 0; i < entries.length; i++) {
-        if (entries[i].startTime === entry.update.startTime && entries[i].id.toString().split("/full/")[1] === entry.update.id) {
-            entries[i] = entry;
-            entries.pop(); //why pop? the last action on the array was a push before this inspection, so pop simply removes the item ... otherwise it will appear twice in the list
-        }
-    }
-}
 function printEntries() {
-    sortEntries(validEntries);
-    for (var i = 0; i < validEntries.length; i++) {
-        writeHtml(validEntries[i]);
-    }
-    if (dailyEventsCount < MINIMUM_EVENTS) { //minimum count not satisifed, pull from the extra entries
-        sortEntries(extraEntries);
-        var deficit = MINIMUM_EVENTS - dailyEventsCount;
-        var length = extraEntries.length;
-        var i = 0;
+    sortEntries(entries);
+	
+	var count = 0;
+	//now is between the entry's start of day and end of day
+	while(moment(entries[count].startTime).startOf('day').format() <= today <= moment(entries[count].endTime).endOf('day').format()) {
+		writeHtml(entries[count++]);
+	}
+    if (count < MINIMUM_EVENTS) { //minimum count not satisifed, pull from the extra entries
+        var deficit = MINIMUM_EVENTS - count;
+        var length = entries.length - count;
         while (deficit-- > 0 && length-- !== 0) {
-            writeHtml(extraEntries[i++]);
+            writeHtml(entries[count++]);
         }
     }
-	log('daily events count = ' + dailyEventsCount);
     var processEnd = new Date().getMilliseconds();
+	log('calendars loaded, processed, and printed in : ' + (processEnd - processBegin) + 'ms');
 }
 function sortEntries(entries) {
     entries.sort(function (a, b) {
