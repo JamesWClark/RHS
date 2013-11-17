@@ -14,8 +14,6 @@
  */
 
 //VARIABLES
-var processBegin = new Date().getMilliseconds();
-
 var MINIMUM_EVENTS = 4;
 var DAYS_TO_SEARCH_FORWARD = 7;
 
@@ -42,14 +40,14 @@ var CALENDARS = [ //these are the IDs of each calendar, found under calendar set
 
 var feedsProcessedCount = 0;
 var dailyEventsCount = 0;
-var entries = new Array();
+var entries = [];
 
 //putting today in the moment(today) constructor isn't necessary, but it allows for convenient testing such as
 //var today = moment('2013-11-24').format();
 //then the entire application shifts and operates around today as november 24th as in the example.
-var today = moment().format();
-var startMin = moment(today).format('YYYY-MM-DD');
-var startMax = moment(today).add('days', 30).format('YYYY-MM-DD');
+var today = moment('2013-11-17');
+var startMin = today.format('YYYY-MM-DD');
+var startMax = moment(today).add('days', DAYS_TO_SEARCH_FORWARD).format('YYYY-MM-DD');
 
 $(document).ready(init());
 
@@ -84,32 +82,30 @@ function processFeed(feed) {
         processEntry(feed.entry[i]);
     }
     if (feedsProcessedCount === CALENDARS.length) { //the ajax requests are complete, sort and print
-        $('#rhs-home-daily-events').html('');
         printEntries();
     }
 }
 function processEntry(entry) {
     var e = getEntryBase(entry);
-    e.startTime = entry.gd$when[0].startTime;
-    e.endTime = entry.gd$when[0].endTime;
     entries.push(e);
 }
 function getEntryBase(entry) {
-    var e = new Object();
+    var e = {};
     e.id = entry.id.$t;
     e.title = entry.title.$t;
     e.location = entry.gd$where[0].valueString;
     e.description = entry.content.$t;
     e.link = entry.link[0].href;
+    e.startTime = entry.gd$when[0].startTime;
+    e.endTime = entry.gd$when[0].endTime;
     return e;
 }
 function printEntries() {
     sortEntries(entries);
-	
-	var count = 0;
-	//now is between the entry's start of day and end of day
-	while(moment(entries[count].startTime).startOf('day').format() <= today <= moment(entries[count].endTime).endOf('day').format()) {
-		writeHtml(entries[count++]);
+    var count = 0;
+    //now is between the entry's start of day and end of day
+    while (moment(today.endOf('day')).diff(moment(entries[count].startTime)) > 0 && count < 20) {
+        writeHtml(entries[count++]);
 	}
     if (count < MINIMUM_EVENTS) { //minimum count not satisifed, pull from the extra entries
         var deficit = MINIMUM_EVENTS - count;
@@ -118,13 +114,11 @@ function printEntries() {
             writeHtml(entries[count++]);
         }
     }
-    var processEnd = new Date().getMilliseconds();
-	log('calendars loaded, processed, and printed in : ' + (processEnd - processBegin) + 'ms');
 }
 function sortEntries(entries) {
     entries.sort(function (a, b) {
-        var x = a["startTime"];
-        var y = b["startTime"];
+        var x = a.startTime;
+        var y = b.startTime;
         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
 }
@@ -141,13 +135,40 @@ function writeHtml(entry) {
 
     $('#rhs-home-daily-events-feed-results > tbody:last').append(html);
 }
+//start and finish will have one of two formats:
+//2013-11-16T13:32:22-06:00         ISO Format
+//2013-11-16                        YYYY-MM-DD
+function getTimeHtml(start, finish) {
+    //check if ISO
+    var sIndexT = start.indexOf('T');
+    var fIndexT = finish.indexOf('T');
+    var sMoment = moment(start);
+    var fMoment = moment(finish);
+	
+    if (fMoment.diff(sMoment, 'days') === 1 && sIndexT === -1) { //single all day event, no times
+        return sMoment.format('YYYY-MM-DD');
+    } else if (fMoment.diff(sMoment, 'days') === 0 && sIndexT !== -1) { //single day, span of time
+        if (sMoment.format('h:mm a') === fMoment.format('h:mm a')) //start and finish time are the same, no need to show twice (reader will treat this as event with start time only)
+            return sMoment.format('YYYY-MM-DD') + ', ' + sMoment.format('h:mm a');
+        else
+            return sMoment.format('YYYY-MM-DD') + ', ' + sMoment.format('h:mm a') + ' to ' + fMoment.format('h:mm a');
+    } else if (sMoment.format('YYYY-MM-DD') !== fMoment.format('YYYY-MM-DD') && sIndexT !== -1) { //span across dates + start and finish time
+        return sMoment.format('YYYY-MM-DD') + ', ' + sMoment.format('h:mm a') + ' to ' + fMoment.format('YYYY-MM-DD') + ', ' + fMoment.format('h:mm a');
+    } else //a span of 24-hour events, midnight to midnight (like School & Offices closed over a three day period)
+        return sMoment.format('YYYY-MM-DD') + ' to ' + fMoment.format('YYYY-MM-DD');
+}
+//start and finish will have one of two formats:
+//2013-11-16T13:32:22-06:00         ISO Format
+//2013-11-16                        YYYY-MM-DD
 function getTimeHtml(start, finish) {
     var sIndexT = start.indexOf('T');
     var fIndexT = finish.indexOf('T');
-    var sTimeString;
-    var fTimeString;
-    var sDateString = moment(start).format('dddd, MMMM D');
-    var fDateString = moment(finish).format('dddd, MMMM D');
+    var sMoment = moment(start);
+    var fMoment = moment(finish);
+    var sDate = moment(start).format('dddd, MMMM D');
+    var fDate = moment(finish).format('dddd, MMMM D');
+    var sTime = moment(start).format('h:mm a');
+    var fTime = moment(finish).format('h:mm a');
 
     //process the start time
     if (sIndexT !== -1) { //process as ISO Format
@@ -157,42 +178,29 @@ function getTimeHtml(start, finish) {
     if (fIndexT !== -1) { //process as ISO Format
         fTimeString = moment(finish).format('h:mm a');
     }
-	
-    //start and finish can be of two formats: 1) 2013-07-07, or 2) 2013-07-07T00:00:00.000Z (ISO Format)
-    //new Date('2013-07-07') equals July 6, and new Date('2013-07-01') equals June 30
-    //this is a big difference in how to process ISO Format versus YYYY-MM-DD format
-    if (new Date(finish) - new Date(start) === 86400000 && sIndexT === -1) { //single all day event, no times
-        return sDateString;
-    } else if (sDateString === fDateString && sIndexT !== -1) { //single day, span of time
-        if (sTimeString === fTimeString) //start and finish time are the same, no need to show twice (reader will treat this as event with start time only)
-            return sDateString + ', ' + sTimeString;
+
+    var diff = fMoment.diff(sMoment, 'days'); //difference in days between start and finish
+    if (diff === 1 && sIndexT === -1) { //single all day event, no times
+        return sDate;
+    } else if (diff === 0 && sIndexT !== -1) { //single day, span of time
+        if (sTime === fTime) //start and finish time are the same, no need to show twice (reader will treat this as event with start time only)
+            return sDate + ', ' + sTime;
         else
-            return sDateString + ', ' + sTimeString + ' to ' + fTimeString;
-    } else if (sDateString !== fDateString && sIndexT !== -1) { //span across dates + start and finish time
-        return sDateString + ', ' + sTimeString + ' to ' + fDateString + ', ' + fTimeString;
+            return sDate + ', ' + sTime + ' to ' + fTime;
+    } else if (sDate !== fDate && sIndexT !== -1) { //span across dates + start and finish time
+        return sDate + ', ' + sTime + ' to ' + fDate + ', ' + fTime;
     } else //a span of 24-hour events, midnight to midnight (like School & Offices closed over a three day period)
-        return sDateString + ' to ' + fDateString;
+        return sDate + ' to ' + fDate;
+}
+function evalTBD(time) {
+    var t = moment(time).format('h:mm a')
+    if (t === '5:55 pm')
+        return 'TBD';
+    else
+        return t;
 }
 function log(msg) {
     if (window.console && console.log) {
         console.log(msg);
     }
 }
-
-/* NOTES
-
-It's probably necessary to process recurring events differently, in order to show a series like daily football camps as Monday - Friday, 10:00 am - 2:00 pm
-The current implementation shows every single day as separate line items
-
-There's really gotta be a better way to ID a recurring event that has been edited for a single item after all recurrence entries have been entered on the calendar
-
-found this important solution piece - recurring event replacement has attribute: gd$originalEvent with the ID that points to the original...
-
-
-wow! - adding to query string really solves a lot of problems.... 
-&singleevents=true
-per documentation of https://developers.google.com/google-apps/calendar/v1/reference#Parameters
-what's up with that?
-    i found an incident where a recurring event had no gd$when in the entry. my code is built on the assumption that value exists. 
-
-*/
