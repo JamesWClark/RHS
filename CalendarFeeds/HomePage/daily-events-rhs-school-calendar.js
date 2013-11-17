@@ -104,7 +104,7 @@ function printEntries() {
     sortEntries(entries);
     var count = 0;
     //now is between the entry's start of day and end of day
-    while (moment(today.endOf('day')).diff(moment(entries[count].startTime)) > 0 && count < 20) {
+    while (moment(today.endOf('day')).diff(moment(entries[count].startTime)) > 0) {
         writeHtml(entries[count++]);
 	}
     if (count < MINIMUM_EVENTS) { //minimum count not satisifed, pull from the extra entries
