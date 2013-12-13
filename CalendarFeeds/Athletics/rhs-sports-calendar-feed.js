@@ -1,11 +1,38 @@
-﻿var calendarId = 'rockhursths.edu_89fbs6i2rm7qncgk5ttjd95uao@group.calendar.google.com';
-var startMin = '2013-11-01'; //YYYY-MM-DD  <-- mandatory format
-var startMax = '2014-04-31'; //YYYY-MM-DD  <-- mandatory format
+﻿/*
+ * Athletics Calendar Events by J.W. Clark
+ * Published for Rockhurst High School
+ * December 13, 2013
+ * 
+ * Required libraries:
+ *      Moment.js (http://momentjs.com/)
+ *      jQuery (http://jquery.com/)
+ *
+ * A sample of HTML that uses this code follows:
+ *
+ * <div id="calendar-feed"></div>
+ * <script src="https://www.rockhursths.edu/file/admin---webdev-documents/moment.min.js"></script>
+ * <script src="https://www.rockhursths.edu/file/admin---webdev-documents/jw-clark---web-assets/rhs-sports-calendar-feed.js"></script>
+ * <script>
+ * 
+ *     var calendarId = 'rockhursths.edu_fpdevts40susg3j1ueoubsrrt8@group.calendar.google.com'; //get this value from calendar settings
+ *     var startMin = '2013-11-01'; //YYYY-MM-DD  <-- mandatory format
+ *     var startMax = '2014-04-01'; //YYYY-MM-DD  <-- mandatory format
+ * 
+ *     $(document).ready(getCalendar(calendarId, startMin, startMax));
+ * 
+ * </script>
+ * <noscript>
+ *     It seems JavaScript is disabled in your web browser. You may find the same information in the Master Calendar under Quick Links.
+ * </noscript>
+ */
 
+var maxResults = 100;
+var timePlaceholder = '5:55 pm'; //any time that matches this will print as TBD
 
-$(document).ready(function () {
+/** called by document.ready */
+function getCalendar(calendarId, startMin, startMax) {
     var https = 'https://www.google.com/calendar/feeds/' + calendarId
-        + '/public/full?alt=json&max-results=100&orderby=starttime&sortorder=ascending&singleevents=true&start-min=' + startMin + '&start-max=' + startMax;
+    + '/public/full?alt=json&max-results=' + maxResults + '&orderby=starttime&sortorder=ascending&singleevents=true&start-min=' + startMin + '&start-max=' + startMax;
     $.ajax({
         url: https,
         dataType: 'jsonp',
@@ -14,7 +41,13 @@ $(document).ready(function () {
             printFeed(response.feed);
         }
     });
-});
+}
+/** called by getCalendar */
+function setGoogleCalendarButton(calendarId) {
+    var html = '<a href="http://www.google.com/calendar/render?cid=' + calendarId + '" target="_blank"><img src="//www.google.com/calendar/images/ext/gc_button6.gif" border=0></a>';
+    $('#calendar-feed').append(html);
+}
+/** called by getCalendar */
 function printFeed(feed) {
     var html = '<table><tr><th style="text-align:left;">Event</th><th style="padding-left: 14px; text-align:left;">Date</th><th style="padding-left: 14px; text-align:left;">Time</th><th style="padding-left: 14px; text-align:left;">Location</th></tr>';
     var entries = feed.entry || [];
@@ -35,12 +68,14 @@ function printFeed(feed) {
         if (description.trim().length > 0)
             html += '<tr><td colspan="4">' + description + '</td></tr>';
     }
-    html += '</table>';
-    $('#calendar-feed').html(html);
+    html += '</table><br />';
+    $('#calendar-feed').append(html);
+    setGoogleCalendarButton(calendarId);
 }
+/** called by printFeed */
 function evalTBD(time) {
     var t = moment(time).format('h:mm a')
-    if (t === '5:55 pm')
+    if (t === timePlaceholder)
         return 'TBD';
     else
         return t;
