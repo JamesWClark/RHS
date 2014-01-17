@@ -35,7 +35,12 @@ var CALENDARS = [ //these are the IDs of each calendar, found under calendar set
      'rockhursths.edu_b2sg20067asnpm5bunlbk07hes%40group.calendar.google.com',    //Football - Varsity
      'rockhursths.edu_017ca5s1pkqlo26p86sq0dqta0%40group.calendar.google.com',    //Soccer - Varsity
      'rockhursths.edu_6r3vm39418qahh989qrhqn3hd4%40group.calendar.google.com',    //Swim & Dive - Varsity
-     'rockhursths.edu_fpdevts40susg3j1ueoubsrrt8%40group.calendar.google.com'     //Wrestling - Varsity
+     'rockhursths.edu_fpdevts40susg3j1ueoubsrrt8%40group.calendar.google.com',    //Wrestling - Varsity
+     'rockhursths.edu_0d2i75kvpcgimrga4lfsihvod4%40group.calendar.google.com',    //Baseball - Varsity
+     'rockhursths.edu_qpnh3lidgqcdnjhjmk797igti4%40group.calendar.google.com',    //Golf - Varsity
+     'rockhursths.edu_t9rvkvj3jvq11s7u8269nsc14k%40group.calendar.google.com',    //Lacrosse - Varsity
+     'rockhursths.edu_odclime8l2bcmde6g8u856sn2s%40group.calendar.google.com',    //Tennis - Varsity
+     'rockhursths.edu_nrv610hprus0metm20otq39bks%40group.calendar.google.com'     //Track & Field - Varsity
 ];
 
 var feedsProcessedCount = 0;
