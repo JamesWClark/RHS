@@ -1,0 +1,21 @@
+﻿#rhs-sports-calendar-feed-table th {
+    text-align:left;
+}
+/* first column */
+#rhs-sports-calendar-feed-table tr th:first-child, #rhs-sports-calendar-feed-table tr td:first-child {
+    
+}
+/* second column */
+#rhs-sports-calendar-feed-table tr th:first-child + th, #rhs-sports-calendar-feed-table tr td:first-child + td {
+    padding-left: 14px;
+    width: 60px;
+}
+/* third column */
+#rhs-sports-calendar-feed-table tr th:first-child + th + th, #rhs-sports-calendar-feed-table tr td:first-child + td + td {
+    padding-left: 14px;
+    width: 60px;
+}
+/* fourth column */
+#rhs-sports-calendar-feed-table tr th:first-child + th + th + th, #rhs-sports-calendar-feed-table tr td:first-child + td + td + td {
+    padding-left: 14px;
+}

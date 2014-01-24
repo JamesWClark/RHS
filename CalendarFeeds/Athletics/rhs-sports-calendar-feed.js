@@ -1,13 +1,13 @@
 ﻿/*
- * Athletics Calendar Events by J.W. Clark
+ * Athletics Google Calendar Events by J.W. Clark
  * Published for Rockhurst High School
- * December 13, 2013
+ * Last Update: January 24, 2014
  * 
  * Required libraries:
  *      Moment.js (http://momentjs.com/)
  *      jQuery (http://jquery.com/)
  *
- * A sample of HTML that uses this code follows:
+ * A sample of HTML that uses this code:
  *
  * <div id="calendar-feed"></div>
  * <script src="https://www.rockhursths.edu/file/admin---webdev-documents/moment.min.js"></script>
@@ -49,7 +49,7 @@ function setGoogleCalendarButton(calendarId) {
 }
 /** called by getCalendar */
 function printFeed(feed) {
-    var html = '<table><tr><th style="text-align:left;">Event</th><th style="padding-left: 14px; text-align:left;">Date</th><th style="padding-left: 14px; text-align:left;">Time</th><th style="padding-left: 14px; text-align:left;">Location</th></tr>';
+    var html = '<table id="rhs-sports-calendar-feed-table"><tr><th>Event</th><th>Date</th><th>Time</th><th>Location</th></tr>';
     var entries = feed.entry || [];
     for (var i = 0; i < entries.length; i++) {
         var title = entries[i].title.$t;
@@ -61,9 +61,9 @@ function printFeed(feed) {
 
         html += '<tr>';
         html += '<td><a href="' + link + '" target="_blank">' + title + '</a></td>';
-        html += '<td style="padding-left: 14px;">' + moment(start).format('MMM DD') + '</td>';
-        html += '<td style="padding-left: 14px;">' + evalTBD(start) + '</td>';
-        html += '<td style="padding-left: 14px;"><a href="https://maps.google.com/maps?q=' + location + '&hl=en" target="_blank">' + location + ' </a></td>';
+        html += '<td>' + moment(start).format('MMM DD') + '</td>';
+        html += '<td>' + evalTBD(start) + '</td>';
+        html += '<td><a href="https://maps.google.com/maps?q=' + location + '&hl=en" target="_blank">' + location + ' </a></td>';
         html += '</tr>';
         if (description.trim().length > 0)
             html += '<tr><td colspan="4">' + description + '</td></tr>';
