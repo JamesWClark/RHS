@@ -28,6 +28,7 @@
 
 var maxResults = 100;
 var timePlaceholder = '5:55 pm'; //any time that matches this will print as TBD
+var unknownLocation = '???'; //if this is encountered in the location field, the hyperlink will be removed
 
 /** called by document.ready */
 function getCalendar(calendarId, startMin, startMax) {
@@ -42,7 +43,7 @@ function getCalendar(calendarId, startMin, startMax) {
         }
     });
 }
-/** called by getCalendar */
+/** called by printFeed */
 function setGoogleCalendarButton(calendarId) {
     var html = '<a href="http://www.google.com/calendar/render?cid=' + calendarId + '" target="_blank"><img src="//www.google.com/calendar/images/ext/gc_button6.gif" border=0></a>';
     $('#calendar-feed').append(html);
@@ -59,14 +60,20 @@ function printFeed(feed) {
         var location = entries[i].gd$where[0].valueString;
         var link = entries[i].link[0].href;
 
+        var marginRow = '<tr class="rhs-sports-calendar-feed-margin-row">';
         html += '<tr>';
         html += '<td><a href="' + link + '" target="_blank">' + title + '</a></td>';
         html += '<td>' + moment(start).format('MMM DD') + '</td>';
         html += '<td>' + evalTBD(start) + '</td>';
-        html += '<td><a href="https://maps.google.com/maps?q=' + location + '&hl=en" target="_blank">' + location + ' </a></td>';
+        if (location === unknownLocation)
+            html += '<td>' + location + '</td>';
+        else
+            html += '<td><a href="https://maps.google.com/maps?q=' + location + '&hl=en" target="_blank">' + location + ' </a></td>';
         html += '</tr>';
         if (description.trim().length > 0)
             html += '<tr><td colspan="4">' + description + '</td></tr>';
+        html += '<tr class="rhs-sports-calendar-feed-table-row-spacer"><td colspan="4"></td></tr>';
+
     }
     html += '</table><br />';
     $('#calendar-feed').append(html);

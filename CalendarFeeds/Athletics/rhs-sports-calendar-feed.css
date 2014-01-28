@@ -1,6 +1,9 @@
 ﻿#rhs-sports-calendar-feed-table th {
     text-align:left;
 }
+.rhs-sports-calendar-feed-table-row-spacer {
+    height: 7px;
+}
 /* first column */
 #rhs-sports-calendar-feed-table tr th:first-child, #rhs-sports-calendar-feed-table tr td:first-child {
     
