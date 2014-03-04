@@ -1,0 +1,1016 @@
+/*  BBNC Part Styles */
+
+.w100p { width: 100%; }
+.taCenter { text-align: center; }
+*.BBFormCheckListContainer { font-family:inherit; font-weight:bold; height:auto; }
+*.ReportInformationCell { font-weight:normal; height:auto; overflow:visible; }
+*.BBModalDialog { font-size:1em; }
+*.BBModalDialogTitle { background-color:#E2E2E2; border-bottom:0 none; color:#000; font-weight:bold; overflow:hidden; padding:0.25em; text-align:left; white-space:nowrap; }
+*.BBModalDialogContent { padding:0; }
+*.BBPagerPageLink,
+*.BBPagerPageSelectedLink,
+*.BBPagerNextPageLink,
+*.BBPagerPrevPageLink { border: 1px solid #C9C9C9; -moz-border-radius: 3px 3px 3px 3px; -webkit-border-radius: 3px 3px 3px 3px; border-radius: 3px 3px 3px 3px; margin: 0.25em; padding: 0.25em 0.5em; behavior:url(document.doc?id=1); }
+*.BBPagerPageSelectedLink { border:0 none; }
+*.BBFieldCaption,
+*.NCCS_checkoutlabel { background-color:transparent !important; font-family:inherit; font-weight:normal; color:#333; padding:0 0.5em 0 0; text-align:right; white-space:normal; width:33%; }
+*.BBFieldCaption label { font-weight:normal; }
+label.BBFieldCaption { padding:0; margin: 0.25em 0.5em 0.25em 0; float:left; }
+*.BBFieldCheckboxCaption { font-family:inherit; font-weight:normal; white-space:nowrap; }
+*.BBFieldCheckboxCaption input { margin:0 0.25em 0 0; background-color:transparent; }
+*.BBFieldControlCell,
+*.NCCS_checkoutvalues { font-family:inherit; padding:0; }
+*.BBFormButtonRow { background:transparent !important; }
+*.BBFormChecklist { font-family:inherit; font-weight:normal; border:none !important; }
+*.BBFormErrorMessage { font-family:inherit; color:#EA2121; font-weight:normal; }
+*.BBFormReadonlyValue { font-family:inherit; font-weight:normal !important; font-style:normal !important; white-space:normal; }
+*.BBFormRequiredFieldMarker { padding:0 0.25em; font-weight:normal; font-size:smaller; text-align:left; }
+*.BBFormRequiredFieldMissingText { font-family:inherit; color:#EA2121; font-weight:normal; }
+*.BBFormSelectList { margin:0.25em 0; font-family:inherit; font-size:12px; background-color:#FFFFFF; }
+table.BBFormSelectList { background-color:transparent; }
+select.BBFormSelectList { background-color:#FFFFFF !important; }
+*.BBSequenceMapNavigationButton { margin: 1em 0.5em !important; }
+*.BBFormTable { border:none !important; font-family:inherit; font-size:1em; font-weight:normal; margin:0 0 1em; padding:0; border-collapse:collapse; clear:both; }
+select.BBFormTable { border:2px inset #FFFFFF !important; font-family:inherit; font-size:1em; font-weight:normal; margin:0; padding:0; border-collapse:separate; clear:both; }
+*.BBFormTextArea { font-size:12px; font-family: inherit; margin:0.25em 0; width: 95%; background-color:#FFFFFF; }
+*.BBFormTextbox { margin:0.25em 0; width: 95%; background-color:#FFFFFF; font-family: inherit; font-size:12px; }
+*.BBFormTextBox { margin:0.25em 0; width: 95%; background-color:#FFFFFF; font-family: inherit; font-size:12px; }
+*.BBFormTitle { border:0 none; padding:0; text-align:left; margin:0; color:#000; font-size:18px; }
+*.BBFormValidatorSummary { font-family:inherit; color:#EA2121; font-weight:normal; background:transparent !important; }
+*.BBListingHeading { border:0 none; font-weight:bold; color:#333; padding:0px; margin:0px; line-height:normal; font-family:inherit; font-size:1em; text-align:left !important; background-color:transparent; }
+*.FRCommentsFieldSet *.BBListingHeading td { font-weight:bold !important; }
+*.BBListingItem { font-family:inherit; }
+*.BBListingTable { font-family:inherit; border:0 none !important; }
+*.BBMessage { font-weight:normal; font-style:normal; font-family:inherit; padding:1em 0px; }
+*.BBPrivateListingItem { font-family:inherit; font-style:normal; }
+*.PagedListFooter { font-family:inherit; font-size:1em; display:block; padding:0 1em; }
+*.SpellBody { background-color:transparent; padding:0; }
+*.SpellCheckBadWord { font-family:inherit; color:#EA2121; font-weight:normal; }
+*.SpellCheckTextBox { margin:0 0 0.5em; background-color:#FFFFFF; }
+*.SpellFieldValue { font-size:1em; }
+*.SpellHeading { font-family:inherit; font-size:1em; }
+*.SpellHeadingCell { background-color:transparent; padding:0.5em 0.5em 0.25em 0; border:none; }
+*.SpellHeadLegend { font-family:inherit; font-size:1em; }
+*.SpellLegend { background-color:transparent !important; font-family:inherit; font-weight:bold; color:#666; padding:0.25em 0.5em 0.25em 0; text-align:right; vertical-align:top; white-space:normal; width:33%; font-size:1em; }
+*.SpellLegend label { font-weight:normal; }
+*.SpellSubject { font-size:1em; margin:0px; padding:0.5em 0; font-weight:bold; font-family:inherit; color:#333; }
+*.SpellSuggestionList { margin:0 0 0.5em; font-family:inherit; border:2px inset #FFFFFF; }
+*.SpellText { background-color:transparent; padding:0; font-family:inherit; padding:1em; font-style:italic; }
+*.SpellTextValue { font-family:inherit; font-size:1em; display:block; margin:1em 0px; }
+*.BBListOddRowStyle { font-family:inherit; background-color:transparent !important; }
+*.BBListEvenRowStyle { font-family:inherit; background-color:#E2E2E2; }
+*.ReportCalendar { font-family:inherit; font-size:1em; }
+*.SpellFieldCaption { font-size:1em; font-weight:normal; }
+*.SpellFormTable { font-family:inherit; font-size:1em; }
+*.ReportFormTable { font-family:inherit; width:100%; margin:1em 0px; }
+*.ReportFormTable table { width:100%; }
+*.ReportFormTable td { padding:0; }
+*.ReportFormTable td.w100p { width:auto; }
+*.ReportFormTable legend { color:#333333; font-size:1em; font-weight:bold; margin:0 0 0.25em; padding:0; }
+*.ReportFormTable img { vertical-align:baseline; }
+#wrapFooter *.ReportFormTable { margin:1em auto; width:auto; }
+*.SpellFormTitle { font-size:1em; }
+*.ReportTitle { height:auto; }
+*.ReportTitle span { padding:0; margin:0; }
+#wrapFooter *.ReportTitle { background:transparent none repeat scroll 0 0; color:#000000; font-size:1em; height:auto; padding:0 0 0.5em; }
+*.MatchFinderEvenRowStyle { border-bottom:1px solid #E2E2E2; padding-bottom:0.5em; margin-bottom:0.5em; }
+*.ReportEvenRowStyle { border-bottom:1px solid #E2E2E2; margin-bottom:0; padding-bottom:0; }
+*.ReportEvenRowStyle td { padding:0.5em; }
+*.ReportListingHeading { font-size:1em; font-weight:bold; color:#333; }
+*.ReportListingHeading td { padding:0.5em; }
+*.MatchFinderOddRowStyle { border-bottom:1px solid #E2E2E2; padding-bottom:0.5em; margin-bottom:0.5em; }
+*.ReportOddRowStyle { border-bottom:1px solid #E2E2E2; padding-bottom:0; margin-bottom:0; }
+*.ReportOddRowStyle td { padding:0.5em; }
+*.LoginSectionHeader { background: transparent; font-style: normal; font-weight:normal; font-size:16px; padding:0.5em 0 0; text-align:left; }
+*.LoginLink { font-family:inherit; font-size:1em; }
+*.LoginFieldCaption { white-space:nowrap; padding:0.5em 0.5em 0.5em 0; vertical-align:middle; }
+span.LoginFieldCaption { display:block; }
+label[for$="cbRememberLogin"] { font-weight:normal; }
+*.LoginFieldCaption input { margin:0 0.5em 0 0; }
+*.LoginFieldMessage { font-family:inherit; font-size:1em; padding:0.5em 0; }
+*.LoginFormCheckList input { float:left; }
+*.LoginFormCheckListContainer { border:1px solid #888888; margin:0 0 0.5em; }
+*.LoginFormSubmitButton { margin:1em 0; }
+*.LoginFormTable { width:auto; }
+*.LoginFormTable table.taCenter { text-align:left; }
+*.LoginFormTable tr.taCenter td { text-align:center; }
+*.LoginFormTable tr.taCenter td table { width:100%; }
+*.LoginFormTable tr.taCenter td table td { text-align:left; }
+*.LoginFormTable *.BBFormRequiredFieldMarker { width:35%; }
+*.LoginFormTextArea { width:225px; margin-right:0.5em; }
+*.LoginFormTextbox { width:225px; margin-right:0.5em; }
+*.LoginFormTextboxNarrow { width:150px; }
+*.LoginFormTitle { background: transparent; font-size:18px; padding:0; }
+*.ProfileFieldCaption { vertical-align:middle; }
+*.ProfileFieldControlCell div { overflow:auto; height:250px; width:95%; border:2px inset #FFF; }
+*.ProfileFormButtonCell { text-align:center; }
+*.ProfileFormTable { width:100%; }
+*.ProfileFormTextbox { width:95%; }
+*.DirectoryFormTable { width:100%; }
+*.DirectoryFormTextBox { width:110px; }
+*.DirectorySearchForm { width:100%; margin:0 auto; }
+*.DirectoryFieldCaption { width:auto; padding-left:0.5em; }
+*.DirectoryFieldControlCell { width:auto; }
+*.DirectoryFormButtonCell { padding:1em 0px; }
+*.DirectoryPagingButton { width:auto; margin:0.5em 0.25em; }
+*.DirectoryListingHeading { padding:0.5em 2em 0.5em 0; border:0px none; }
+*.DirectoryListingItem { padding:0.5em 2em 0.5em 0.5em; border-bottom:1px solid #E2E2E2; white-space:normal !important; text-align:left !important; }
+*.DirectoryListingTable { width:100%; margin:1em 0; }
+*.DirectoryListingTable td { text-align:center; }
+*.DirectoryListingItem td { text-align:left; }
+*.DonationCaptureFieldControlCellAmount { font-size:1em; width:auto; }
+*.DonationCaptureFieldControlCellAmount *.BBFieldCaption { vertical-align:top; }
+*.DonationCaptureFieldCaption { background: transparent; width:33%; }
+*.DonationFieldCaption { background: transparent; white-space:normal; }
+label.DonationFieldCaption { display:block; }
+*.DonationFieldCheckboxCaption { display:block; padding:0.5em 0; }
+*.DonationFieldCheckboxCaption label { font-weight:normal; }
+*.DonationCaptureFieldControlCell { width:auto; }
+*.DonationCaptureFieldControlCell table { width:auto !important; margin:0 !important; }
+*.DonationCaptureFieldControlCell table td { padding:0; }
+*.sDonationCaptureFieldControlCell table { width:auto !important; margin:0 !important; }
+*.sDonationCaptureFieldControlCell table td { padding:0; }
+*.DonationCaptureFieldControlCell label { vertical-align:middle; font-weight:normal; margin:0 0.5em 0 0; }
+*.DonationCaptureFieldControlCell input { vertical-align:middle; margin-right:0.5em; }
+*.DonationFieldControlCell { width:auto; }
+*.DonationFieldControlCell label { font-weight:normal; color:#333; vertical-align:middle; }
+*.DonationFieldControlCell input { vertical-align:middle; margin-right:0.25em; }
+*.DonationFormTable table *.DonationFieldControlCell { padding:0.25em 0.5em 0.25em 0; }
+label[for$="rdoOther"] { display:none; }
+*.DonationButtonCell { text-align:center; padding:1em 0 0; }
+*.DonationCaptureReadonlyValue { font-size:1em; }
+*.DonationCaptureRequiredFieldMarker { width:15%; }
+*.DonationRequiredFieldMarker { width:15%; }
+*.DonationCaptureSelectListNarrow { width:auto; }
+*.DonationSelectList { width:auto; }
+*.DonationSubmitButton { margin:1em 0; }
+*.DonationGridEvenRow *.DonationSubmitButton,
+*.DonationGridOddRow *.DonationSubmitButton { margin:0; }
+*.DonationFormTable { width:75%; margin:0; }
+*.DonationFormTable table { border-collapse:collapse; width:auto; margin:0 !important; border-color:#FFFFFF; border-style:solid; border-width:0px; }
+*.DonationFormTable table td { border-color:#FFFFFF; border-style:solid; border-width:0px; }
+*.DonationFormTable label.BBFieldCaption { display:block; text-align:left; margin:0.5em 0; }
+*.DonationFormTable .vaTop { vertical-align:middle; }
+*.DonationCaptureTextArea { width:95%; }
+*.DonationTextArea { width:95%; }
+*.DonationCaptureTextbox { width:95%; }
+*.DonationCaptureTextboxNarrow { width:100px; }
+*.DonationCaptureTextboxWide { width:95%; }
+*.DonationTextbox { width:95%; }
+*.DonationTextboxNarrow { margin: 0; width:100px; }
+*.DonationTextboxWide { width:95%; }
+*.DonationValidationSummary { background:transparent; }
+*.DonationGridFooter td { vertical-align:top; padding:0.25em; border-color:#FFFFFF; }
+*.DonationGridHeader td { font-weight:bold; vertical-align:top; border-color:#FFFFFF; }
+*.DonationGridEvenRow td { vertical-align:top; padding:0.25em; border-color:#FFFFFF; }
+*.DonationCaptureListingHeading { text-align: left; border: 0 none; background: transparent; height:auto; font-size:18px; padding:1em 0 0; }
+*.DonationListingHeading { text-align: left; border: 0 none; background: transparent; height:auto; font-size:18px; padding:1em 0 0; margin:0; }
+*.DonationGridOddRow td { vertical-align:top; padding:0.25em; border-color:#FFFFFF; }
+*.DonationMessage { padding:0; }
+*.BBClassNotesTabButtons { text-align:right; }
+*.BBClassNotesLastModifiedMessage { color:inherit; }
+*.EventAttendeesComplete { background-color:#FAFAFA; color:#333; font-size:1em; padding-left:0; font-weight:normal; }
+*.EventAttendeesCurrent { background-color:#FAFAFA; color:#333; font-size:1em; font-weight:normal; padding-left:0; }
+*.EventAttendeesFuture { background-color:#FAFAFA; color:#333; font-size:1em; padding-left:0; font-weight:normal; }
+*.EventAttendeesGrid { background-color:#FAFAFA; border:1px solid #888888; color:#333; font-size:1em; margin:1em 0; padding-right:0; vertical-align:top; }
+*.EventAttendeesOverallTotal { background-color:#FAFAFA; font-size:0.92em; font-weight:normal; padding-right: 7px; text-align: right !important; }
+*.EventItemRegistrantsEventName { background-color:transparent; border:medium none; color:#333333; font-family:inherit; font-size:1em; font-style:normal; font-weight:bold; padding:0 0 0.25em; text-align:left; }
+*.EventItemsSelectionGrid { border:0 none; margin:0; width: 650px !important; }
+*.EventSectionHeader { font-weight:normal; font-size:18px; background-color:transparent; border:medium none; padding: 1em 0 0.25em; text-align:left; }
+*.EventTicketsBodyCell { color:#333; font-size:0.92em; font-weight:normal; padding-right:0.25em; }
+*.EventTicketsHeaderCell { color:#333; font-size:0.92em; font-weight:bold; padding:0.25em 0.25em 1em 0; }
+*.SummaryGridEventTitle { font-size:1em; font-style:normal; font-weight:bold; }
+*.EventItemRegistrantControlCellName { width:33%; padding:0; }
+*.EventItemRegistrantControlCellName *.BBFieldCaption { white-space:nowrap; float:none; }
+*.EventItemRegistrantsHeader { background-color:transparent; border-bottom:0 none; color:#000; font-family:inherit; font-size:1em; font-weight:bold; padding:0 0 0.25em; text-align:left; }
+*.EventItemRegistrationControlCellDescription { width:55%; padding:0 1em; vertical-align:middle; }
+*.EventItemRegistrationControlCellNumParticipants { width:15%; white-space:nowrap; }
+*.EventItemRegistrationControlCellPrice { width:20%; }
+*.EventItemRegistrationsHeader { background-color:transparent; color:#333333; font-family:inherit; font-size:1em; font-weight:bold; padding:0 0 0.25em; text-align:left; }
+*.EventProgressCell { background-color:#666; color:#000; /* change to match design */ font-weight:normal; border-bottom:3px solid #000; border-radius:10px 10px 0 0; font-family:inherit; font-size:1em; height:auto; line-height:normal; padding:0.5em 1%; text-align:center; white-space:nowrap; behavior:url(document.doc?id=1); }
+*.EventProgressCellFuture { background:transparent none repeat scroll 0 0; border-bottom:3px solid #CCCCCC; color:#999999; font-family:inherit; font-size:1em; font-weight:bold; height:auto; line-height:normal; padding:0.5em 1%; text-align:center; white-space:nowrap; }
+*.EventProgressCellPast { background:transparent; border-bottom:3px solid #CCCCCC; color:#CCCCCC; font-family:inherit; font-size:1em; font-weight:bold; height:auto; line-height:normal; padding:0.5em 1%; text-align:center; white-space:nowrap; }
+*.EventItemRegistrantControlCell { padding:0; white-space:nowrap; }
+*.EventItemRegistrantSelectList { width:auto; }
+*.EventItemRegistrantsTable { font-size:1em; }
+*.EventItemRegistrationsTable { width:100%; margin:0; font-size:1em; }
+*.EventItemRegistrationsTable tr { border-bottom:1px solid #888888; }
+*.EventItemsTable { border: 0 none; border-collapse: collapse; }
+*.EventTable { margin:0; width:100%; }
+table[id$="tblProgress"] { border-collapse:collapse; }
+*.EventTable *.BBFieldCheckboxCaption { display:block; margin:0.25em 0 0; }
+*.EventTable table table { margin-left:auto; margin-right:auto; }
+*.EventTable *.BBFormSubmitButton { display:block; margin:1em 0 1em auto; }
+*.EventTable *.BBListEvenRowStyle { background-color:transparent !important; }
+*.EventTable *.LoginFormTextbox { width:100%; }
+*.EventItemRegistrantTextbox { width:95%; }
+*.EventItemTitleDescription { font-size: 1em !important; font-family:inherit !important; color:inherit !important; font-style:normal; text-transform: none !important; }
+table.EventItemsTable *.EventItemTitleDescription { border:0 none; color:#333; display:block; font-family:inherit; font-size:1em; font-weight:normal; line-height:normal; margin:0.5em 0; padding:0; text-transform:none; }
+*.EventItemTitleName { border:medium none; color:#333; display:block; font-family:inherit; font-size:1em; font-weight:bold; padding:0; text-align:left; }
+*.EventItemTitleTime { font-size: 1em !important; font-family:inherit !important; color:inherit !important; font-style:italic; text-transform: none !important; }
+table.EventItemsTable *.EventItemTitleTime { border:medium none; color:#333; display:block; font-family:inherit; font-size:1em; font-weight:normal; padding:0; text-transform:none; }
+*.SubscriptionFormCheckList { border: 0 none; margin:0.5em; }
+*.SubscriptionFormTable { border: 0 none; }
+*.SubscriptionFormTable table { border-collapse:collapse; }
+*.SubscriptionFormTable td { padding:0; }
+*.SubscriptionFormList input { margin:0 0.25em 0 0; float:left; }
+*.SubscriptionFormList label { display:block; padding:0 0 0 1.75em; }
+*.SubscriptionFormListHeader { border-collapse:collapse; margin:1em 0 0; background-color:#FAFAFA; }
+*.SubscriptionFormListHeader td { padding:0.5em; }
+#trEmailLists { background-color:#FAFAFA; }
+td.SubscriptionFormMessage { padding:1em 0; }
+*.BSubscriptionFormMessage input { margin:0 0.25em 0 0; display:block; float:left; }
+*.BSubscriptionFormMessage label { display:block; padding:0 0 0 1.75em; }
+*.MailForwardingFormTable { border: 0px; }
+*.DiscussionGroupHeadingCell { background-color:transparent; padding:1em 0; width:100%; }
+*.DiscussionGroupHeadingText { font-size: 1em; font-family: inherit; }
+*.DiscussionGroupSearchTextCell { vertical-align:middle; width:33%; }
+*.DiscussionGroupSpellButtonWAI { background:url(images/CheckSpelling.gif) no-repeat; border-style:none; border-width:0px; height:14px; padding:0px; width:79px; text-indent:-9999px; }
+*.DiscussionMessageNew { font-size: 1em; font-family: inherit; }
+*.DiscussionMessageSepHR { color:#C0CEED; margin:1em auto; padding:0; width:80%; }
+*.DiscussionReplyBody { white-space:normal; }
+*.DiscussionReplyFieldValue { font-family:inherit; font-size:1em; white-space:normal; }
+*.DiscussionReplyBody .DiscussionReplyBody .DiscussionReplyFieldValue { display:block; padding:1em 2em; }
+*.DiscussionReplyHeading { color:#333; font-family:inherit; font-weight:normal; font-size:1em; padding:0; height:auto; }
+*.DiscussionReplySubject { font-size:1em; font-weight:bold; }
+*.DiscussionReplyTable { margin:0 0 1em; border-collapse:collapse; }
+*.DiscussionThreadLBracket { display:block; }
+*.DiscussionThreadRBracket { display:block; }
+*.DiscussionThreadTBracket { display:block; }
+*.DiscussionTopicBody { white-space:normal; background-color:transparent; padding:0; }
+*.DiscussionTopicBody td { padding:0.5em 0.5em 0; }
+*.DiscussionTopicBody td td { padding:0; }
+*.DiscussionTopicBody table { border-collapse:collapse; width:100%; }
+*.DiscussionTopicFieldValue { font-family:inherit; font-size:1em; white-space:normal; display:block; padding:1em 2em; }
+*.DiscussionTopicBody table.w100p .DiscussionTopicFieldValue { display:inline; padding:0; }
+*.DiscussionTopicHeading { background-color:transparent; height:auto; color:#000000; font-family:inherit; font-weight:bold; font-size:1em; padding:0.25em; }
+*.DiscussionTopicList { font-family:inherit; font-size:1em; }
+*.DiscussionTopicListHeader { color:#333; font-family:inherit; font-weight:bold; font-size:1em; }
+*.DiscussionTopicListHeader td { padding:0.5em; }
+*.DiscussionTopicNumReplies { font-family:inherit; font-size:1em; }
+*.DiscussionTopicSepHR { color:#333; margin:1em auto; padding:0; width:80%; }
+*.DiscussionTopicSubject { color:#333; font-family:inherit; font-size:1em; font-weight:bold; }
+*.DiscussionTopicTable { margin:0 0 0.5em; }
+*.PostDiscussionPreviewHeading { font-size:1em; font-family:inherit; }
+*.PostDiscussionPreviewHeadingCell { background-color:transparent; }
+*.PostDiscussionPreviewLegend { font-family:inherit; font-size:1em; }
+*.PostDiscussionReplyHeading { font-size:1em; font-family:inherit; }
+*.PostDiscussionReplyHeadingCell { background-color:transparent; }
+*.PostDiscussionReplyLegend { font-size:1em; font-family:inherit; }
+*.PostDiscussionTopicHeading { font-size:1em; font-family:inherit; }
+*.PostDiscussionTopicHeadingCell { background-color:transparent; }
+*.PostDiscussionTopicLegend { font-size:1em; font-family:inherit; }
+*.DiscussionFilterFieldCaption { font-family:inherit; font-size:1em; }
+*.DiscussionReplyFieldCaption { font-family:inherit; font-size:1em; font-weight:normal; }
+*.DiscussionTopicFieldCaption { font-family:inherit; font-size:1em; font-weight:normal; }
+*.PostReplyFieldCaption { font-family:inherit; font-size:1em; font-weight:normal; float:none !important; }
+*.PostTopicFieldCaption { font-family:inherit; font-size:1em; font-weight:normal; width:auto; }
+*.DiscussionGroupButtonCell { padding:0.5em 0; }
+*.PostDiscussionPreviewFormTable { font-family:inherit; font-size:1em; }
+*.PostDiscussionReplyFormTable { font-family:inherit; font-size:1em; }
+*.PostDiscussionTopicFormTable { font-family:inherit; font-size:1em; }
+*.DiscussionGroupSpellButtonWAI { background-color:transparent; color:#283587; text-decoration:none; font-weight:bold; }
+*.DiscussionGroupSearchTextbox { width: 100%; }
+*.DiscussionGroupFormTitle { font-size:1em; font-family:inherit; }
+*.DiscussionTopicsEvenRowStyle td { padding:0.5em 0.5em 0.5em 0.5em; white-space:normal !important; vertical-align:top; }
+*.DiscussionThreadList { font-family:inherit; font-size:1em; }
+*.DiscussionTopicsOddRowStyle td { padding:0.5em 0.5em 0.5em 0.5em; white-space:normal !important; vertical-align:top; }
+*.DiscussionGroupMessage { font-family:inherit; font-size:1em; font-weight:normal; padding: 1em 0 0; }
+*.BBDocumentDisplayDescriptionStyle { font-style:normal; font-size:0.92em; }
+*.BBDocumentDisplayDescriptionStyle td { padding:0 0 0 3em !important; }
+*.BBDocumentDisplayHeaderRow td { padding:0.5em; }
+*.BBDocumentDisplayTable { margin:1em 0; }
+*.BBDocumentTabButtons { padding:0; text-align:right; }
+*.BBDocumentAddDescription { font-size:1em; }
+*.BBDocumentDisplayEvenRowStyle td { padding:0.5em; }
+*.BBDocumentDisplayOddRowStyle td { padding:0.5em; }
+*.BBPollAnswersRadioList { border-collapse:collapse; white-space:normal; }
+*.BBPollAnswersRadioList td { padding:0 0 0.5em; }
+*.BBPollAnswersTable { border-collapse:collapse; }
+*.BBPollAnswersTableCell { padding:0; }
+*.BBPollResultsTable { border-collapse:collapse; }
+*.BBPollResultsTableCell { padding:0; }
+*.BBPollsQuestionCell { font-size:1em; padding:0.5em 1em 1em; }
+*.BBPollsQuestionRow { font-weight:normal; }
+*.BBPollAnswersRow td { padding: 0 0.5em; }
+*.BBPollsSubmitButtonCell { padding:1em 1em 0; }
+*.BBPollsSubmitButton { font-weight:normal; }
+*.BBPollsFormTable { margin:0 0 1em; }
+*.twoColumn .BBPollsFormTable { width:100%; }
+*.BBPollsFormTitle { padding:0; text-align:left; }
+*.JobBoardLegend { font-size:1em; }
+*.JobDetailHeadingCell { background-color:transparent; font-weight:bold; padding:0.5em 0; width:100%; }
+*.JobDetailLegend { font-size:1em; }
+*.JobPostDetailFieldCaption { background-color:transparent; font-weight:bold; color:#000; width:33%; padding:0.5em 0.5em 0.5em 0; }
+*.JobPostDetailFieldValue { background-color:transparent; width:auto; padding:0; }
+*.JobPostDetailFieldValue span { display:block; margin:0.5em 0; }
+*.JobPostDetailTable { font-size:1em; }
+*.JobResultsFilterFieldCaption { font-family:inherit; font-size:1em; }
+*.JobResultsHeading { font-family:inherit; }
+*.JobResultsHeadingCell { background-color:transparent; font-weight:bold; padding:0.5em 0; width:100%; }
+*.JobResultsLegend { font-family:inherit; font-size:1em; }
+*.JobResultsList { font-family:inherit; font-size:1em; }
+*.JobResultsListHeader { font-family:inherit; font-size:1em; font-weight:bold; }
+*.JobResultsListHeader td { padding:0.5em 2em 0.5em 0; }
+*.PostJobHeadingCell { background-color:transparent; font-weight:bold; padding:0.5em 0; width:100%; }
+*.PostJobLegend { font-size:1em; }
+*.PreviewJobHeadingCell { background-color:transparent; font-weight:bold; padding:0.5em 0; width:100%; }
+*.PreviewJobLegend { font-size:1em; }
+*.SearchJobHeadingCell { background-color:transparent; font-weight:bold; padding:0.5em 0; width:100%; }
+*.SearchJobLegend { font-size:1em; }
+*.JobSearchFieldCaption { background-color:transparent; width:33%; }
+*.JobPostFieldControlCell { width:auto; }
+*.JobSearchFieldControlCell { width:60%; }
+*.JobPostSelectList { width:auto; }
+*.JobSearchSelectList { width:auto; }
+*.JobBoardFormTable { font-family:inherit; }
+*.JobDetailFormTable { font-family:inherit; }
+*.PostJobFormTable { font-family:inherit; width:100%; }
+*.PreviewJobFormTable { font-family:inherit; }
+*.SearchJobFormTable { font-family:inherit; }
+*.JobPostTextArea { width:95%; }
+*.JobPostTextboxWide { width:95%; }
+*.JobSearchTextboxWide { width: 95%; }
+*.JobBoardValidationSummary { font-size:1em; }
+*.JobResultsEvenRowStyle { border-bottom:1px solid #CCCCCC; }
+*.JobResultsEvenRowStyle td { padding:0.5em 2em 0.5em 0; }
+*.JobResultsOddRowStyle { border-bottom:1px solid #CCCCCC; }
+*.JobResultsOddRowStyle td { padding:0.5em 2em 0.5em 0; }
+*.BBMembershipBenefitsFormTable { margin:1em; }
+*.BBMembershipSummaryActionCaption { display:block; width:100%; padding:0; margin:0; height:auto; font-weight:bold; color:#333; }
+*.BBMembershipCatDescription { padding: 0.5em 0 0.5em 25px; }
+*.BBMembershipCardFieldsetLegend { font-weight: bold; color: #333333; }
+*.BBMembershipSubCategoryFieldCaption { padding: 0 0.5em 0 0; width: 175px; }
+*.BBMembershipFieldCaption { padding:0.5em 0.5em 0.5em 0; text-align:right; vertical-align:middle; width:200px; }
+*.MembershipCurrentItem *.BBMembershipFieldCaption { padding:0; }
+tr[id$="AdditionalContrib"] *.BBMembershipFieldCaption { padding:0.5em 0 !important; }
+*.BBMembershipFieldCaption span { display:block; float:left; width:200px; text-align:right; padding-right:0.5em; }
+*.BBMembershipFieldCaption span[id$="lblSymbol"] { display:inline; float:none; padding:0; width:auto; }
+*.BBMembershipSummaryFieldCaption { width:33%; padding:0.5em 0.5em 0.5em 0; }
+*.BBMembershipFieldCheckboxCaption { display: block; padding: 0; }
+tr[id$="GOM"] *.BBMembershipFieldCheckboxCaption { margin:0.5em 0 0 175px; padding:0 0 0 0.5em; }
+*.BBMembershipControlCell { padding:0.5em 0; vertical-align: middle; }
+*.BBMembershipControlCell label,
+*.BBMembershipControlCell span { margin-right: 2em; }
+*.BBMembershipControlCell span { display: block; white-space: nowrap; width:auto; }
+*.BBMembershipControlCell label { font-weight: bold; margin: 0 0.25em; }
+*.BBMembershipControlCell *.BBMembershipFieldCheckboxCaption label { font-weight: normal; }
+*.BBMembershipFormReadonlyValue { padding:0; width:auto; text-align:left !important; }
+tr[id$="SummaryBenefits"] *.BBMembershipFormReadonlyValue { font-weight:bold !important; color:#333; padding:0 0 0.5em; }
+*.BBMembershipBackButton { float:left; margin:0 auto 0 0; }
+*.BBMembershipNextButton { margin:0 0 0 auto; float: right; }
+*.BBMembershipSubmitButton { float: right; }
+*.BBMembershipFormTable { margin:0 1em 1em; width:100%; }
+*.BBMembershipFormTable *.DonationCaptureFormTable { width:auto; }
+*.BBMembershipFormTable fieldset { margin:0 0 1em; padding:0; border:0 none; }
+*.BBMembershipFormTable table { width: 100%; }
+*.BBMembershipTextArea { width: 95%; }
+*.BBMembershipTextBox { width:auto; }
+*.BBMembershipFormTitle { background-color:transparent; border:medium none; color:#000; font-family:inherit; font-size:18px; font-weight:bold; height:auto; margin:0; padding:0 0 0.5em; text-align:left; text-transform:none; display:none; }
+*.BBMembershipBenefitsGridHeader { font-size:1em; border-top:0px none; display: none; }
+*.BBMembershipBenefitsGridItem { font-size:1em; }
+*.BBMembershipBenefitsGridItem td { text-align:left; border-bottom:1px solid #D5D5D5; }
+*.BBMembershipBenefitsTable { border-color:#FFF !important; border-collapse:collapse; }
+*.BBMembershipBenefitsTable td { padding:0.5em; font-size:1em; }
+*.GivingHistoryList { font-size:1em; font-family:inherit; }
+*.GivingHistoryListHeader { font-size:1em; font-family:inherit; }
+#contentSidebar .NewsReaderFormImage,
+#contentSecondary .NewsReaderFormImage { display:none; }
+*.NewsReaderResultsList td { padding:0; }
+#contentSecondary .NewsReaderItemDesc,
+*.NewsReaderResultsList br,
+#contentSidebar .NewsReaderItemDesc,
+*.NewsReaderResultsList br { display:none; }
+*.NewsReaderItemLink { display:block; margin:0; font-weight:normal; }
+#contentSidebar .NewsReaderItemDesc,
+#contentSecondary .NewsReaderItemDesc { display:none; }
+*.NewsReaderItemDate { display:block; margin:0 0 1em; font-size:1em; font-style:normal; color:#666666; }
+*.NewsReaderFormTable { border-collapse:collapse; width:100%; font-family:inherit; font-size:1em; line-height:18px; margin:0; }
+#contentSecondary .NewsReaderFormTable input,
+#contentSecondary .NewsReaderFormTable label,
+#contentSidebar .NewsReaderFormTable input,
+#contentSidebar .NewsReaderFormTable label { display:none; }
+*.NewsReaderFormTitle { font-family: inherit; font-size: 1em; }
+*.NewsChannelFormImage { font-family:inherit; padding:0 0 0.25em; }
+*.NewsChannelStoryList { font-size:1em; font-family:inherit; width:100%; border-color:#F0F0E6; }
+*.NewsChannelStoryListHeader { font-size:1em; font-family:inherit; }
+*.NewsChannelItemTitle { font-family: inherit; font-size: 18px; }
+*.NewsChannelItemDesc { padding:0.5em 1em !important; }
+*.NewsChannelItemDate { font-family:inherit; font-size:0.92em; font-style:normal; }
+*.PostChannelStoryHeading { font-family:inherit; font-size:1em; }
+*.PostChannelStoryLegend { font-size:1em; font-family:inherit; }
+*.CHannelStoryEditButtonWAI { padding:0 0 0 1em; }
+*.CHannelStoryDeleteButtonWAI { padding:0 0 0 1em; }
+*.CHannelRSSFeedButton,
+*.ChannelRSSFeedButton { float:right; background: url("images/feed-icon.gif") no-repeat scroll 0 0 transparent; height: 16px; width:16px;}
+*.PostStoryFieldCaption { font-family:inherit; font-size:1em; font-weight:normal; width:auto; }
+*.PostChannelStoryFormTable { font-size:1em; font-family:inherit; margin:1em 0; }
+*.NewsChannelFormTitle { font-size: 18px; font-family: inherit; width:auto; margin:0 0 0.25em; display:block; }
+*.PostChannelStoryFormTitle { font-size:1em; font-family:inherit; padding:0 0 0.25em; }
+*.NewsChannelListingTable { margin:0 0 1em; }
+*.NewsChannelListingTable td.taRight table { border-collapse:collapse; margin:0 0 0 auto; }
+*.FRDashBoardSectionHeading { background-color:#0C1C4E; color:#FFFFFF; font-family:inherit; font-size:1em; font-weight:bold; padding:0.25em; white-space:nowrap; }
+*.FRDashBoardSection { border:0px none; font-size:1em; }
+*.FRDashBoardSection textarea,
+*.FRDashBoardSection input { width:auto !important; }
+*.FRDashBoardSection table fieldset legend { color:#000; font-weight:bold; font-size:1em; }
+*.FRDashBoardSection table fieldset table td,
+*.FRDashBoardSection table fieldset table table table td { white-space:normal !important; }
+*.FRDashLink { font-size:1em; }
+*.FRFormTable *.FRDashLink { margin:0 1em 0 0; }
+*.FRDashLink:link { font-size:1em; }
+*.FRDashLink:visited { font-size:1em; }
+*.FRDashLink:hover { font-size:1em; }
+*.FRDashLink:active { font-size:1em; }
+*.FRDashSubHeading { font-size:1em; }
+*.FRTeamGraph { border-collapse:collapse; margin:1em 0px; }
+*.FRTeamGraphName { font-size:1em; }
+*.FRTeamGraphHeading { padding:0px 0.25em 0.25em 0px; border:0px none; font-size:1em; }
+*.FRTeamGraphFooter { padding:0.25em; border:0px none; font-size:1em; }
+*.FRToDoNewDonationsText { font-size:1em; }
+*.FRButtonText { padding:0px 3em 0px 0px; border-right:0px none; }
+*.FRButtonTextActive { display:block; }
+*.FRButton { padding:0px 3em 0px 0px; border-right:0px none; }
+*.FRParticipantName { font-weight:normal; margin:0 0 0.25em; padding:0 0 0.25em; font-size:1em; color:#000; }
+*.FRTeamName { font-size:1em; }
+*.FRFieldSetCaption { font-size:1.25em; font-weight:bold; color:#333; display:block; margin:1em 0 0; }
+*.FRFieldSetCaption span,
+span.FRFieldSetCaption { font-family:inherit; font-weight:normal; font-size:1em; }
+*.FRCommentsFieldSet *.FRFieldSetCaption { color:#333; display:block; font-family:inherit; font-size:1.25em; font-weight:bold; margin:0; padding:0; }
+*.FRText { font-size:1em; white-space:nowrap; }
+*.FRDonorListSetCaption { display:block; margin:0 0 0.75em; padding:0 0 0.5em; font-size:1.25em; color:#333; font-weight:bold; background-color:#FAFAFA; }
+*.FRProgressIndicator { background-color:transparent; border:0 none; border-spacing:0; color:#252525; font-size:1em; font-weight:bold; margin:0 0 1em; vertical-align:top; width:100%; }
+*.FRSectionHeader { background-color:transparent; color:#333; font-size:1.25em; font-style:normal; font-weight:bold; padding:1em 0 0.25em; text-align:left; }
+*.FRProgressCell { background-color:transparent; border-bottom:3px solid #000000; color:#000000; font-family:inherit; font-size:1em; font-weight:bold; height:auto; line-height:normal; padding:0.5em 1%; text-align:center; white-space:nowrap; }
+*.FRProgressCellFuture { background:transparent none repeat scroll 0 0; border-bottom:3px solid #CCCCCC; color:#999999; font-family:inherit; font-size:1em; font-weight:bold; height:auto; line-height:normal; padding:0.5em 1%; text-align:center; white-space:nowrap; }
+*.FRProgressCellPast { background:transparent; border-bottom:3px solid #CCCCCC; color:#CCCCCC; font-family:inherit; font-size:1em; font-weight:bold; height:auto; line-height:normal; padding:0.5em 1%; text-align:center; white-space:nowrap; }
+*.FRDonorListFieldSet { font-weight:normal; margin:0; }
+*.FRDonorListFieldset { font-weight:normal; margin:0; }
+*.FRDonorListEvenRowStyle td { padding:0px 0.5em 0px 0px; }
+*.FRSearchFieldSet { margin:0; }
+*.FRSearchFieldSet .vaBottom { vertical-align:middle; }
+*.FRSearchFieldSet table { border-collapse:collapse; margin:auto; }
+*.FRCommentsFieldSet { margin:0px; }
+*.FRCommentsFieldSet legend { margin:0px 0px 1em; padding:0px; }
+*.FRCommentsFieldSet table { border-collapse:collapse; }
+*.FRCommentsFieldSet td { white-space:normal !important; padding:0.25em; vertical-align:top; font-weight:normal; }
+*.FRCommentsFieldSet td.wsNowrap { white-space:nowrap !important; }
+*.FRSubmitButton { margin:0 auto 0.25em; }
+*.FundRaiserSubmitButton { margin:0 auto 0.25em; }
+*.FRFormTable table { background-color:transparent !important; }
+*.FRFormTable fieldset div { background-color:#FAFAFA; border:1px solid #F4F3EE; display:block; overflow:auto; width:680px; }
+*.FRFormTable fieldset div table { background-color:transparent !important; }
+*.FRFormTable fieldset div div { width:auto; display:block; overflow:auto; border:0px none; background-color:transparent; }
+*.FRFormTitle { font-size:18px; color:#000; padding:0.5em 0; }
+fieldset *.FRFormTitle { padding:0.5em 0; font-size:1.25em; color:#333; font-family:inherit; font-weight:bold; }
+*.FREvenRowStyle td table td { border:0px none; width:auto !important; }
+*.FREvenRowStyle td { background-color:transparent; border:0px none; padding:0.25em 0; }
+*.FREvenRowStyle td span { text-align:left; width:100%; }
+*.FRDonorListEvenRowStyle { font-weight:normal; }
+*.FRDonorListEvenRowStyle td { padding:0.25em; }
+*.FRListingHeading { background-color:transparent; color:#000000; }
+*.FRListingHeading td { border-collapse:collapse; font-size:1em; padding:0.25em; }
+*.FRDonorListHeading { color:#000; }
+*.FRDonorListHeading td { padding:0px 0.5em 0.5em 0px; }
+*.FRDonorListing { border-collapse:collapse; border-style:none; width:100%; }
+*.FROddRowStyle td table td { border:none; }
+*.FROddRowStyle td { background-color:transparent; border:0px none; padding:0.5em 0; }
+*.FROddRowStyle td span { text-align:left; width:100%; }
+*.FRDonorListOddRowStyle { font-weight:normal; }
+*.FRDonorListOddRowStyle td { padding:0px 0.5em 0px 0px; }
+*.FRManagerFieldSetCaption { color:#333; font-size:1.25em; font-weight:bold; }
+*.FRManagerDashBoardSection { font-size:1em; border:0 none; }
+*.FRManagerDashBoardSectionHeading { background-color:#000080; color:#FFFFFF; font-size:1em; font-weight:bold; padding:0.25em; white-space:nowrap; }
+*.FRManagerDashBoardSectionHeading *.BBFormTextBox,
+*.FRManagerDashBoardSectionHeading *.BBFormTextbox { width:auto; }
+*.FRManagerDashBoardSectionToolbar { font-size:1em; }
+*.FRManagerDashCaptions:link { font-size:1em; }
+*.FRManagerDashCaptions:visited { font-size:1em; }
+*.FRManagerDashCaptions:hover { font-size:1em; }
+*.FRManagerDashCaptions:active { font-size:1em; }
+*.FRManagerDashCaptions { font-size:1em; }
+*.FRManagerFormTitle { font-size:18px; color:#000; }
+*.SurveyTitle { display:block; font-family:inherit; font-size:1em; font-weight:bold; margin:0 0 1em; padding:0; }
+*.SurveyFormTable *.BBFormTitle { background:transparent none no-repeat 0px 0px; padding:0; }
+*.SurveySubTitle { font-family: inherit; display:block; font-family:inherit; font-size:0.92em; margin:0 0 1em; }
+*.SurveyQuestion { font-family: inherit; font-weight: bold; display: block; font-size:1em; padding:0 0 0.5em; }
+*.SurveyQuestionSequence { font-family: inherit; font-weight: bold; font-size:1em; }
+*.SurveyAnswer { font-family: inherit; font-size:1em; font-weight:normal; padding:0.5em; }
+label.SurveyAnswer { font-family:inherit; font-size:1em; font-weight:normal; padding:0; }
+*.SurveyAnswerColumnHeading { font-family: inherit; padding:0 0.5em; font-size:1em; text-align:center !important; }
+*.SurveyQuestionSeparator { background-color: transparent; font-size: 0; }
+*.SurveyResponseColumnHeading { font-size: 1em; font-family: inherit; }
+*.SurveyResponseCell { font-family:inherit; font-size:1em; }
+*.SurveyAnswerTableHeaderRow { background: transparent; font-weight: bold; }
+*.SurveyTestModeMessage { font-family: inherit; font-size:1em; font-weight:bold; }
+*.SurveyAnswerRequiredMessage { font-family: inherit; font-weight: normal; font-style: normal; font-size:1em; padding:0; }
+*.SurveyButton { font-family:inherit; font-size:1em; margin:0; }
+*.SurveyFormTable { width:400px; }
+*.SurveyQuestionTable td { padding:0 0 0.25em; }
+*.SurveyAnswerTable { width: 100%; }
+*.SurveyOpenEndedEssayTextArea { width:95%; }
+*.SurveyOpenEndedAnswerTextbox { width:250px; float:left; clear:both; }
+*.SurveyCompleteMessage { font-family:inherit; font-size:1em; }
+*.SurveyErrorMessage { font-family:inherit; font-size:1em; }
+*.SlideshowButtonCell br { display:none; }
+*.SlideshowPictureCell { height:auto !important; }
+*.SlideshowTable { border-collapse:collapse; margin:0 0 1em; }
+*.SlideshowImage { padding:0; }
+img.SlideshowImage { -moz-border-radius: 3px 3px 3px 3px; -webkit-border-radius: 3px 3px 3px 3px; border-radius: 3px 3px 3px 3px; box-shadow: 0 1px 6px #666666; padding: 0; position: relative; behavior: url(document.doc?id=1); }
+*.CHDashBoardSectionHeading { color:#FFFFFF; font-family:inherit; font-size:1em; font-weight:bold; padding:0.25em; white-space:nowrap; }
+*.CHDashBoardSection { border:0px none; font-size:1em; }
+*.CHDashBoardSection textarea,
+*.CHDashBoardSection input { width:auto !important; }
+*.CHDashBoardSection table fieldset legend { color:#000; font-weight:bold; font-size:1em; }
+*.CHDashBoardSection table fieldset table td,
+*.CHDashBoardSection table fieldset table table table td { white-space:normal !important; }
+*.CHDashLink { font-size:1em; }
+*.CHFormTable *.CHDashLink { margin:0 1em 0 0; }
+*.CHDashLink:link { font-size:1em; }
+*.CHDashLink:visited { font-size:1em; }
+*.CHDashLink:hover { font-size:1em; }
+*.CHDashLink:active { font-size:1em; }
+*.CHDashSubHeading { font-size:1em; }
+*.CHButtonText { padding:0px 3em 0px 0px; border-right:0px none; }
+*.CHButtonTextActive { display:block; }
+*.CHButton { padding:0px 3em 0px 0px; border-right:0px none; }
+*.CHFieldSetCaption { font-size:1.25em; font-weight:normal; color:#333; display:block; margin:1em 0 0; }
+*.CHFieldSetCaption span,
+span.CHFieldSetCaption { font-family:inherit; font-weight:normal; font-size:1.25em; }
+*.CHCommentsFieldSet *.CHFieldSetCaption { color:#333; display:block; font-family:inherit; font-size:1.25em; font-weight:normal; margin:0; padding:0; }
+*.CHText { font-size:1em; white-space:nowrap; }
+*.CHSubmitButton { margin:0 auto 0.25em; }
+*.CHFormTable table { background-color:transparent !important; }
+*.CHFormTable fieldset div { background-color:#E2E2E2; border:1px solid #666666; display:block; overflow:auto; width:680px; }
+*.CHFormTable fieldset div table { background-color:transparent !important; }
+*.CHFormTable fieldset div div { width:auto; display:block; overflow:auto; border:0px none; background-color:transparent; }
+*.CHFormTitle { padding:0.5em 0 0.35em; }
+fieldset *.CHFormTitle { padding:0.5em 0 0.35em; font-size:1em; color:#000; font-family:inherit; }
+*.CHEvenRowStyle td table td { border:0px none; width:auto !important; }
+*.CHEvenRowStyle td { background-color:transparent; border:0px none; padding:0.25em 0; }
+*.CHEvenRowStyle td span { text-align:left; width:100%; }
+*.CHListingHeading { background-color:transparent; color:#000000; }
+*.CHListingHeading td { border-collapse:collapse; font-size:1em; padding:0.25em; }
+*.CHOddRowStyle td table td { border:none; }
+*.CHOddRowStyle td { background-color:transparent; border:0px none; padding:0.5em 0; }
+*.CHOddRowStyle td span { text-align:left; width:100%; }
+*.SearchTable { white-space: normal !important; }
+tr.SearchHeaderRow td { padding:12px 5px; }
+*.BBSearchDescriptionStyle { white-space:normal !important; padding:0 0.5em 1em; }
+*.SearchFormDescription { padding:0.5em 0; }
+*.SearchButton { margin: 0; }
+*.SearchFormTable td.wsNowrap { white-space:normal; }
+*.SearchFieldCaption { display: block; }
+*.SearchEvenRowStyle td a { display:block; font-weight: bold; padding:9px 6px 3px; }
+*.SearchOddRowStyle td a { display:block; font-weight: bold; padding:9px 6px 3px; }
+*.QuickSearchFormTable { }
+*.QuickSearchFormTable td { padding:0; vertical-align:middle; }
+*.QuickSearchButton { }
+*.QuickSearchFieldCaption { padding:0; display:none; }
+*.CalendarViewEventItemContainer { margin:0.5em 0 0.5em 0.5em; }
+*.CalendarViewCalendarContainer { margin:1em 0 !important; border:1px solid #C9C9C9; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; behavior:url(document.doc?id=1); }
+*.ListViewDateLabel { color:#333; display:block; font-family:inherit; font-size:1em; font-weight:normal; height:auto; margin:1em 0 0; }
+*.ListViewEventItemContainer { font-size:1em; }
+*.ListViewEventItemContainer div { padding: 0 0 1em 0 !important; }
+*.CalendarViewMonthYearLabel { height:auto; line-height:1em; vertical-align:top; font-size:1em; }
+*.CalendarViewDayHeader { background-color:transparent; color:#FFF; height:auto; padding:0.75em; text-transform:none; text-align:center; font-size:1em; font-family:inherit; font-weight:normal; }
+*.CalendarViewOtherMonthDay { background-color:transparent; border:1px dashed #C9C9C9; border-top:0px none; color:#333333; height:100px; text-align:right; }
+*.CalendarViewWeekendDay { height:100px; border:1px dashed #C9C9C9; border-top:0px none; background-color:#FFF; text-align:right; }
+*.CalendarViewDay { height:100px; border:1px dashed #C9C9C9; border-top:0px none; background-color:#FFF; text-align:right; }
+*.ListViewDateRangeGoButton { margin:0 0 0 0.6em; }
+*.ListViewEventDate { color:#333; display:block; font-family:inherit; font-size:1em; font-weight:bold; margin:0 0 1em; }
+*.ListViewEventTitle { color:#000000; font-family:inherit; font-size:1em; font-weight:bold; text-align:left; text-transform:none; }
+*.ListViewEventSubtitle { font-style:italic; color:#333; display:block; font-family:inherit; font-size:1em; font-weight:normal; margin:0 0 0 1em; vertical-align:top; }
+*.ListViewEventTime { display:block; font-size:1em; font-weight:bold; margin:0 0 0 1em; }
+*.ListViewEventLocation { font-size:1em; display:block; font-weight:bold; margin:0; }
+*.EventCalendarName { font-weight:normal; font-size:22px; text-align:left; display:block; white-space:nowrap; }
+*.DetailEventTitle { text-align:left; color:#006666; font-family:inherit; font-weight:bold; font-size:1em; }
+*.DetailEventSubtitle { color:#333; font-family:inherit; font-weight:normal; font-size:1em; font-style:normal; }
+*.DetailCaptionContainer { background-color:transparent; border-bottom:1px solid #AAAAAA; padding:0.5em 0; }
+*.DetailCaption { font-size:18px; color:#000; }
+*.CalendarViewToday { background-color:#EFD5B8; border:1px dashed #C9C9C9; color:#333333; font-weight:bold; text-align:right; }
+*.CalendarViewAllDayEvent { border:none; }
+*.CalendarFilterContainer span.CalendarFilterSaveMsg { display:none; margin-bottom:0px; }
+*.CalendarFilterContainer span { display:block; margin-bottom:0px; overflow:hidden; }
+*.CalendarFilterContainer label { display:block; float:left; padding:0; }
+*.CalendarFilterContainer input { float:left; clear:left; margin: 0.25em 0.5em 0 !important; }
+*.EventCalFilter_Show { border:0 none !important; display:block !important; padding:1em !important; position:relative !important; }
+*.CalendarFilterSaveButton { color:black; font-size:12px; width:100px; }
+*.CalendarFilterHorizontalDividers { clear:both; }
+*.EventCalendarPartContainer table { border-collapse:collapse; margin:auto; }
+*.EventCalendarPartContainer table table { margin:0.25em 0; }
+table[id$="CalendarEvent1_rblMapLink"] { margin-bottom: 0.5em; }
+*.EventCalFilter_Show,
+*.EventCalFilter_Hide { border: 0 none; padding: 1em 0; font-size: 1em; }
+span[id$="lblCalName"] { display: block; padding: 0; font-weight: bold; }
+*.ListViewTopLeft { border-bottom:0px none; }
+*.ListViewTopRight { border-bottom:0px none; text-align:right; vertical-align:top; }
+td.ListViewTopGap *.BBFormTextbox { margin:0 0 0.25em; }
+td.ListViewTopGap { font-weight:bold; }
+*.ListViewEventDivider { font-size:1em; display:block; margin:0px 0px 1em 1em; }
+*.CalendarViewContainer { font-size:1em; }
+*.CalendarViewTopLeft { font-weight:bold; padding:0; }
+*.CalendarViewTopMiddle { text-align:center !important; vertical-align:middle; width:30%; }
+*.CalendarViewTodayText { display: block; padding: 0 0 0 6px; }
+*.CalendarFilterSaveContainer input { display:inline; float:right; }
+*.CalendarEventRecurMsg { padding:0; }
+*.CalendarEventRecurContainer { border: 0 none; }
+*.CalendarFormCategoryContainer { border-collapse:collapse; width:85%; }
+*.CalendarFormCategoryContainer td { padding:0; }
+*.CalendarFormCategoryContainer input,
+*.CalendarFormCategoryContainer select,
+*.CalendarFormCategoryContainer textarea { margin:0.25em 0; }
+*.CalendarFormCategoryContainer label { margin:0 0.5em 0 0; }
+*.CalendarFormDateTimeContainer { border-collapse:collapse; width:85%; }
+*.CalendarFormDateTimeContainer table { margin:0; }
+*.CalendarFormDateTimeContainer td { padding:0; }
+*.CalendarFormDateTimeContainer input,
+*.CalendarFormDateTimeContainer select,
+*.CalendarFormDateTimeContainer textarea { margin:0.25em 0; }
+*.CalendarFormDateTimeContainer *.BBFormTextbox { margin-right: 0.25em; }
+*.CalendarFormDateTimeContainer img { vertical-align: middle; }
+*.CalendarFormDateTimeContainer label { margin:0 0.5em 0 0; float:none; }
+*.CalendarFormOptionalText { vertical-align:middle; }
+*.CalendarFormEventInfoContainer { border-collapse:collapse; width:85%; }
+*.CalendarFormEventInfoContainer td { padding:0; }
+*.CalendarFormEventInfoContainer input,
+*.CalendarFormEventInfoContainer select,
+*.CalendarFormEventInfoContainer textarea { margin:0.25em 0; }
+*.CalendarFormEventInfoContainer label { margin:0 0.5em 0 0; }
+*.CalendarEditButtons { margin:1em 0 !important; }
+*.EventCalendarButtons { font-size:1em; padding:0 1em 0 0; }
+*.EventCalendarButtonBar { height:auto; padding:0; }
+*.CalendarFormFieldCaption { vertical-align:middle; width:33%; }
+*.DetailLeft { text-align:right; font-weight:bold; vertical-align:middle; }
+*.DetailDateTime { color: #333333; font-size: 1em; font-weight: normal; padding:0px; border-bottom:0px none; }
+*.DetailEventDetails { border:none; }
+*.DetailRight { vertical-align:middle; padding:0.25em 0 0; }
+*.EditEventLocation { height:auto; width:90%; }
+*.EditEventContactInfo { height:auto; width:90%; }
+*.EditEventFees { height:auto; width:90%; }
+*.EditEventTextBox { border-style:inset; width:90%; }
+*.EducationListHeader { font-size:1em; font-family:inherit; }
+*.EducationFormFieldSet { border:0 none; margin:0; padding:0; }
+*.EducationListEvenRowStyle { font-size:1em; font-family:inherit; }
+*.EducationListOddRowStyle { font-size:1em; font-family:inherit; }
+*.BBVolOpInstructions { padding:0.5em 0; }
+*.BBVolOpJobDetailCaption { width:15%; vertical-align:top; padding-top:0.5em; padding-bottom:0.5em; }
+*.BBVolOpJobDetailFieldValue { padding:0.5em 0; }
+*.BBVolOpSignUpTextBox { width:80%; }
+*.BBVolOpJobListEvenRow td { vertical-align:top; padding: 0.25em 0.5em; }
+*.BBVolOpJobListHeader td { white-space:nowrap; }
+*.BBVolOpJobList { margin:1em 0; }
+*.BBVolOpJobListOddRow td { vertical-align:top; padding: 0.25em 0.5em; }
+*.UpcomingEventContainer { background-color:transparent; }
+*.UpcomingEventContainer br { display:none; }
+#printStart br { display:none; }
+*.RecentEventContainer { background-color:transparent; }
+*.RecentEventContainer br { display:none; }
+*.HighlightEventTitle { display:block; padding:0.5em 0 0; }
+*.HighlightEventDate { display:block; }
+*.HighlightEventTime { display:block; }
+*.HighlightEventCancelled { display:block; }
+*.HighlightEventScore { display:block; }
+*.BBNotesNoteTopicCell { width:25%; padding:0; font-weight:bold; }
+*.BBNotesNoteNameCell { font-weight: bold; text-align:center; width:50%; padding:0; }
+*.BBNotesNoteDateCell { padding:0; font-weight:bold; }
+*.BBNotesNoteLinkCell { padding:0; }
+*.BBNotesNoteCell { padding:0.5em 0 0 2em; text-align:left; }
+*.BBNotesInstructions { font-style: normal; }
+*.BBNotesSearchFormTable { margin:1em 0 0; }
+*.BBNotesTabSelected { background:transparent none; font-weight:bold; padding:0.5em 1em 0.5em 0; }
+*.BBNotesTabUnselected { padding:0.5em 1em 0.5em 0; }
+*.BBNotesFieldCaption { font-weight: bold; }
+*.BBNotesNoteTable { margin: 15px 0; }
+*.BBNotesLayoutTable { margin:1em 0; }
+*.BBNotesSearchFormLayoutTable { margin:1em 0 0; width:100%; }
+*.BBNotesTextBox { font-size:1em; margin:0.25em 0; border:1px solid #A7A6AA; width:auto; }
+*.BBNotesListOddRow { background-color: transparent; }
+*.BBAnonymousSubscriptionCaption { white-space:nowrap; padding:0 0.5em 0 0 !important; }
+*.BBAnonymousSubscriptionControlCell { padding:0.25em 0 !important; }
+*.BBAnonymousSubscriptionButtonCell { padding:1em 0 0 !important; }
+*.BBAnonymousSubscriptionFormTable { margin:0 0 1em; }
+*.BBAnonymousSubscriptionFormTable table { border-collapse:collapse; }
+*.BBAnonymousSubscriptionFormTable td { padding:0; }
+#contentSidebar *.BBAnonymousSubscriptionFormTable { margin:1em 0; }
+*.BBAnonymousSubscriptionTitle { font-family:inherit; padding:0; }
+*.Scroller { border:0 none; border-collapse:collapse; font-family:inherit; margin:0 0 1em; }
+td.ScrollerBodyTD { background-color:transparent !important; padding:0 1em !important; }
+*.ScrollerBodyTD div { width:auto !important; }
+*.ScrollerHeaderTD { background-color:transparent; color:#006666; font-size:1.25em; font-weight:normal; padding:0.75em; text-align:left; }
+*.ScrollerHeaderTD span { display:block !important; width:auto !important; }
+*.ScrollerLoadingMsg { font-size:1em; padding:0.25em; }
+*.ScrollerListRow { font-size:0.92em; padding:0; }
+*.ScrollerItemComment { padding:0.25em 1em; }
+*.PageSharingContainer { border:0 none; overflow:hidden; padding:0; width:100%; }
+*.PageSharingList { clear:both; display:block; float:right; margin:0 0 1em; padding:0; }
+*.PageSharingListItem { display:inline; float:none; list-style-image:none; list-style-position:outside; list-style-type:none; margin:0; padding:0; }
+*.PageSharingListItemLink { text-decoration:none; }
+*.PageSharingListItemLinkImage { background:transparent none repeat scroll 0 0; border:medium none; display:inline; float:none; height:auto; margin:0 0.25em 0 0; padding:0; vertical-align:top; width:auto; }
+*.PageSharingListItemLinkText { float:none; margin:0 1em 0 0; padding:0; }
+*.PageSharingControlCell { padding:0; }
+*.PaymentPartSubmitButton { display:block; margin:0; }
+*.PaymentPartGrid { border-color: #FFF;/* match content bg */ margin:1em auto; width:100%; }
+*.PaymentPartGrid_Header th { text-align: left; }
+*.PaymentPartGrid td,
+*.PaymentPartGrid th { vertical-align: middle; padding: 0.25em; }
+*.PaymentPartGrid tr { border-bottom: 1px solid #cfcfc8; }
+*.PaymentPartGrid th,
+*.PaymentPartGrid td { border-bottom: 1px solid #cfcfc8; }
+*.PaymentPartGrid_Header { font-family:inherit; font-size:1em; }
+*.ECardWizardSubheading { margin-bottom:1em; }
+*.ECardSection th[scope="col"] { text-align: left; }
+*.ECardSectionSeparator { border:1px solid #AAAAAA; color:#FFFFFF; font-family:inherit; font-size:1em; font-weight:bold; padding:0.25em; width:auto; }
+*.ECardPreviewBlock { border:0 none; margin:0.5em 0; padding:0.5em; }
+*.ECardPreviewBlock table { width:auto !important; }
+*.ECardPreviewBlock span[id$="lblPreviewFromCaption"],
+*.ECardPreviewBlock span[id$="lblPreviewToCaption"],
+*.ECardPreviewBlock span[id$="lblPreviewSubjectCaption"],
+*.ECardPreviewBlock span[id$="lblFinalPreviewFromCaption"],
+*.ECardPreviewBlock span[id$="lblFinalPreviewToCaption"],
+*.ECardPreviewBlock span[id$="lblFinalPreviewSubjectCaption"],
+*.ECardPreviewBlock span[id$="lblSubjectCaption"] { padding-right: 0.5em; text-align:right; font-weight: bold; width: 60px; }
+*.ECardThumbnail { border:0 none; margin-bottom:1em; margin-left:0; margin-right:1em; padding:0; text-align:center; vertical-align:middle; opacity:0.75; }
+*.ECardCurrentStep { background-color:transparent; border:0 none; border-bottom:3px solid #000000; color:#000000; font-family:inherit; font-size:1em; font-weight:bold; height:auto; line-height:normal; padding:0.5em 1%; margin:0; text-align:center; white-space:nowrap; }
+*.ECardPastStep { background:transparent; border:0 none; border-bottom:3px solid #CCCCCC; color:#CCCCCC; font-family:inherit; font-size:1em; font-weight:bold; height:auto; line-height:normal; padding:0.5em 1%; margin:0; text-align:center; white-space:nowrap; }
+*.ECardFutureStep { background:transparent none repeat scroll 0 0; border:0 none; border-bottom:3px solid #CCCCCC; color:#999999; font-family:inherit; font-size:1em; font-weight:bold; height:auto; line-height:normal; padding:0.5em 1%; margin:0; text-align:center; white-space:nowrap; }
+*.ECardThumbnail:hover { opacity:1; border:0 none; }
+*.GivingSearchSearchForm { background-color:#FAFAFA; border:1px solid #B6BABB; border-collapse:collapse; margin:0; padding:0; width:100%; }
+*.GivingSearchResultsHeader { color:#333; display:block; font-size:1em; font-weight:bold; margin:1em 0 0; padding:0 0 0.25em; text-align:left; text-transform:none; }
+*.GivingSearchResultOddRow { clear:both; padding:0.5em; }
+*.GivingSearchResultCount { color:#666; float:left; margin:0.25em 0.5em 0 0; text-transform:none; }
+*.GivingSearchResultEvenRow { background-color:#FAFAFA; border:0 none; clear:both; padding:0.5em; }
+*.GivingSearchFieldCaption { color:#000000; padding:0.5em; text-align:right; }
+*.GivingSearchFieldControlCell { padding:0.5em 0.5em 0.5em 0; }
+*.GivingSearchFormButtonCell { padding:0.5em; }
+*.GivingSearchFormTextBox { width:100%; }
+*.GivingSearchFormTable br { display:none; }
+*.GivingSearchFormTitle { color:#000; font-size:18px; text-align:left; padding:0; }
+*.GivingSearchResultLink { padding:0; }
+*.TransactionManagerInformationGrid { width: auto; }
+*.TransactionManagerFilterContainer { border:0 none; margin-bottom:1em; padding:0; width:auto; }
+*.TransactionManagerFilterItem { margin-right:0; margin-top:0.5em; overflow:auto; }
+*.TransactionManagerGrid { width: 100%; }
+*.TransactionManagerGridCell { padding:0.5em; text-align:left; }
+*.TransactionManagerGridHeaderCell { background-color:#FFFEF2; color:#000; cursor:pointer; font-family:inherit; font-size:1em; padding:0.5em; padding-left:15px !important; text-align:left; }
+*.TransactionManagerGridHeaderCellSortedAscending { background-color:#FFF8E3; background-position:0 50%; background-repeat:no-repeat; color:#000; }
+*.TransactionManagerGridHeaderCellSortedDescending { background-color:#FFF8E3; background-position:0 50%; background-repeat:no-repeat; color:#000; }
+*.TransactionManagerSummaryContainer { margin-bottom:1em; width:auto; }
+*.TransactionManagerSummaryTable { border:0 none; border-collapse:collapse; font-size:100%; width:100%; }
+*.TransactionManagerSummaryHeaderValue { font-family:inherit; padding:0.5em; text-align:right; width:33%; }
+*.TransactionManagerSummaryDetailValue { font-family:inherit; padding:0.5em; text-align:right; width:33%; }
+*.TransactionManagerDatePickerFieldCaption { display:block; float:left; padding-top:0.25em; width:33%; }
+*.TransactionManagerFundPickerFieldCaption { display:block; float:left; padding-top:0.25em; width:33%; }
+*.TransactionManagerOddRow { background-color:transparent; }
+*.TransactionManagerFilterActions { margin-left:0; margin-top:1em; text-align:center; }
+*.TransactionManagerFieldContainer { display:block; }
+*.TransactionManagerGridNotificationCell { padding:0.5em; }
+*.TransactionManagerTabsContainer { background-color: transparent; border-color: #C9C9C9; border-style: solid; border-width: 0; clear: both; float: left; position: relative; width: 100%; z-index: 2; }
+*.TransactionManagerTab { float: left; margin: 0 0 0 0.5em; padding: 0.5em 1em; }
+*.TransactionManagerCurrentTab { background-color: #FFFFFF; background-image: none; border-color: #C9C9C9; -moz-border-radius: 3px 3px 0 0; -webkit-border-radius: 3px 3px 0 0; border-radius: 3px 3px 0 0; border-style: solid; border-width: 1px 1px 0; margin-bottom: 0; margin-top: 0; padding: 0.5em 1em; behavior:url(document.doc?id=1); }
+*.TransactionManagerTabContent { background-color: #FFFFFF; border-color: #C9C9C9; -moz-border-radius: 3px 3px 3px 3px; -webkit-border-radius: 3px 3px 3px 3px; border-radius: 3px 3px 3px 3px; border-style: solid; border-width: 1px; clear: none; float: left; margin: -1px 0 0; overflow: auto; padding-top: 0; position: relative; width: 100%; z-index: 1; behavior:url(document.doc?id=1); }
+*.TransactionManagerContentWrapper { margin: 1em; }
+*.TransactionManagerHelpTextDiv { clear: both; padding: 0 0 1em; }
+*.TransactionManagerFilterContainer { border: 0 none; margin-bottom: 1em; padding: 0; width: auto; }
+*.TransactionManagerInformationGrid { width: auto; }
+*.Pager { border:0 none; float:left; margin:0 0 1em; }
+*.PagerInfo { background-color:transparent; float:left; font-weight:bold; padding:0.5em; white-space:nowrap; }
+*.TransactionManagerReceiptImage { margin-left:0.5em; }
+/* Form Display */
+
+*.BBFormDisplayNewFormListOddRowStyle { }
+*.BBFormDisplayItem { padding: 0.25em; }
+*.BBFormDisplaySection { border: 0 none; margin: 0; padding: 0; }
+*.BBFormDisplayFieldCaption { font-size: 12px; }
+*.BBFormDisplayTextbox,
+input[id$="txtAlias"] { width:33%; }
+*.BBFormDisplayTextAreaContainer { padding:0; }
+*.BBFormDisplayTextArea { width:33%; }
+*.BBFormDisplayEmailContainer { padding:0; }
+*.BBFormDisplayEmail { float: left; font-size: 11px; margin: 0.25em 0; width: 33%; }
+*.BBFormDisplayTextboxContainer,
+*.BBFormDisplayDropdownContainer { padding: 0; }
+*.BBFormDisplayRequiredFieldMarker { float: none; margin:0.25em; }
+*.BBSequenceMapCommandContainer { text-align:center; }
+*.BBSequenceMapOptionalContainer { float: none; margin:0; }
+*.BBSequenceMapNavigationContainer { float: none; margin: 1em 0; }
+*.BBSequenceMapNavigationButton { margin:0 0.5em; }
+*.BBSequenceMapNavigationPreviousButton { float:left; }
+*.BBSequenceMapNavigationNextButton { float:right; }
+*.BBSequenceMap { margin:1em 0; overflow:hidden; padding:0; }
+*.BBSequenceMapStep { float:left; list-style-image:none; list-style-position:outside; list-style-type:none; margin:0; }
+*.BBSequenceMapStepItem { background: none repeat scroll 0 0 transparent; border-color: #999999; border-style: none none solid; border-width: 0; color: #666; display: block; font-size: 11px; min-height: 0; min-width: 0; padding: 0.5em 0.5em 0.25em; text-align: left; text-decoration: none; white-space: nowrap; }
+*.BBSequenceMapStepLink:link { color: #999999; font-size: 11px; }
+*.BBSequenceMapStepLink:hover { background-color:transparent; color:#999; }
+*.BBSequenceMapCurrentStepItem { background-color:#666; color:#000; /* change to match design */ font-weight:normal; border-radius:10px 10px 0 0; font-family:inherit; font-size:11px; height:auto; padding: 0.5em 0.5em 0.25em; text-align:center; white-space:nowrap; behavior:url(document.doc?id=1); }
+*.BBFormDisplaySequenceMapFutureStepItem { border-color:#999999; color:#333; }
+*.BBFormDisplayRequiredFieldMissingText { background-color:transparent; margin-bottom:0; margin-left:1em; margin-top:0; font-size:11px; }
+*.BBFormDisplayErrorMessage { background-color:transparent; margin-bottom:0; margin-left:0; margin-top:0; }
+#NewFormListDiv,
+#MyFormListDiv { margin: 0 0 1em; }
+/********   Form Display ********/
+
+.BBFormDisplayHelpImage { background-image: url(images/helpsm.gif); cursor: pointer; float: left; margin-right: 8px; height: 16px; width: 16px; }
+.BBFormDisplayHelpImageAltText { position: absolute; text-indent: -9000px; }
+.BBFormDisplayHelpContainer { float:left; position:relative; }
+.BBFormDisplaySection { border:0px; padding:0px; margin:0px; margin-bottom:10px; }
+.BBFormDisplaySectionLabel { font-weight:bold; }
+.BBFormDisplayCheckboxListContainer { padding:5px; }
+.BBFormDisplayTextboxContainer { padding:5px; }
+.BBFormDisplayTextAreaContainer { padding:5px; }
+.BBFormDisplayImage { float: left; margin-right: 8px; }
+.BBFormDisplayImageContainer { }
+.BBFormDisplayText { }
+.BBFormDisplayTextContainer { padding:5px; overflow:auto; }
+.BBFormDisplayDropdownContainer { padding:5px; }
+.BBFormDisplayRadioButtonList { float: left; margin-right: 8px; }
+.BBFormDisplayRadioButtonListContainer { padding:5px; }
+.BBFormDisplayEmailContainer { padding:5px; }
+.BBFormDisplayFieldResponseText { display:block; padding-top:2px; margin-left:158px; font-weight:bold; }
+.BBFormDisplayResponseContainer { padding:5px; overflow:auto; }
+.BBFormDisplayOtherContainer { }
+.BBFormDisplayCheckboxContainer { padding:5px; }
+.BBFormDisplayNewFormList { width:100%; border:1px solid #CCCCCC; }
+.BBFormDisplayItem { padding:3px; }
+.BBFormDisplayLinkButton { }
+.BBFormDisplayStartedFormList { width:100%; border:1px solid #CCCCCC; margin-bottom:15px; }
+.BBFormDisplayPrintContainer { }
+.BBFormDisplayPrintButtonContainer { padding-top:15px; }
+.BBFormDisplayHelp { position:absolute; padding:5px; border:1px solid #CCCCCC; min-width:200px; background-color:#FFFFDD; top:0px; left:20px; max-width:350px; white-space:normal; word-wrap:break-word; line-height:normal; }
+.BBFormDisplayDisabled { color: #C0C0C0; }
+.BBFormDisplayFieldReadOnlyText { display:block; float:left; font-weight:bold; margin-right:3px; padding-top:2px; }
+.BBFormDisplayReadOnlyFieldContainer { padding:5px; }
+.BBFormDisplayNewFormListDisabled { color: #696969; }
+.BBFormDisplayFileAttachmentContainer { padding:5px; }
+.BBFormDisplayFileAttachment { float:left; }
+.BBFormDisplayFileAttachmentFileName { float:left; }
+.BBFormDisplayFileAttachmentErrorMessage { float:left; }
+.BBFormDisplayFieldCaption { float:left; display:block; width:150px; text-align:right; margin-right:8px; font-size:11px; padding-top:2px; white-space:normal !important; clear:left; }
+.BBFormDisplayCheckbox { float: left; }
+.BBFormDisplayChecklist { float: left; border:none !important; margin-right: 8px; }
+.BBFormDisplayCheckboxListWithOther { }
+.BBFormDisplayReviewFieldCaption { }
+.BBFormDisplayOtherCaption { }
+.BBFormDisplayFormDisplayName { }
+.BBFormDisplayBeginLink { width:80px; }
+.BBFormDisplayStartedForm { }
+.BBFormDisplayStartedFormStatus { width:80px; }
+.BBFormDisplayResumeLink { width:50px; text-align:center; }
+.BBFormDisplayDeleteLink { width:40px; text-align:center; }
+.BBFormDisplayPrintLink { width:30px; text-align:center; }
+.BBFormDisplayRadioButtonListWithOther { }
+.BBFormDisplayOtherRequiredText { }
+.BBFormDisplaySelectWithOther { }
+.BBFormDisplayOtherTextbox { }
+.BBFormDisplayEmail { float: left; width: 150px; margin-right: 8px; }
+.BBFormDisplayErrorMessage { background-color:#FFEEEE; margin-bottom:3px; margin-left:158px; margin-top:10px; }
+.BBFormDisplayRequiredFieldMarker { float: left; margin-right: 8px; }
+.BBFormDisplayRequiredFieldMissingText { background-color:#FFEEEE; margin-bottom:3px; margin-left:158px; margin-top:10px; }
+.BBFormDisplaySelectList { float:left; margin-right:8px; }
+.BBFormDisplayTextArea { float: left; width: 300px; margin-right: 8px; }
+.BBFormDisplayTextbox { float: left; width: 150px; margin-right: 8px; }
+.BBFormDisplayNewFormListEvenRowStyle { }
+.BBFormDisplayStartedFormListEvenRowStyle { }
+.BBFormDisplayNewFormListOddRowStyle { }
+.BBFormDisplayStartedFormListOddRowStyle { }
+.BBFormDisplaySequenceMap { }
+.BBFormDisplaySequenceMapCommandContainer { }
+.BBFormDisplaySequenceMapContentContainer { }
+.BBFormDisplaySequenceMapContentHeader { }
+.BBFormDisplaySequenceMapCurrentStep { }
+.BBFormDisplaySequenceMapCurrentStepItem { }
+.BBFormDisplaySequenceMapFirstStep { }
+.BBFormDisplaySequenceMapFutureStep { }
+.BBFormDisplaySequenceMapFutureStepItem { }
+.BBFormDisplaySequenceMapLastStep { }
+.BBFormDisplaySequenceMapNavigationButton { }
+.BBFormDisplaySequenceMapNavigationContainer { }
+.BBFormDisplaySequenceMapPreviousStep { }
+.BBFormDisplaySequenceMapStep { }
+.BBFormDisplaySequenceMapStepItem { }
+.BBFormDisplaySequenceMapStepLink { }
+.BBFormDisplaySequenceMapStepLink:active { }
+.BBFormDisplaySequenceMapStepLink:hover { }
+.BBFormDisplaySequenceMapStepLink:link { }
+.BBFormDisplaySequenceMapStepLink:visited { }
+.BBFormDisplaySequenceMapStepList { }
+/***** End Form Display styles *****/
+
+
+/********   Sequence Map Defaults   ********/
+
+.BBEventRegSequenceMap .BBSequenceMap { margin:0px; padding:0px; }
+.BBEventRegSequenceMap .BBSequenceMapStepList { margin:0; padding:0; display:block; overflow:auto; }
+.BBEventRegSequenceMap .BBSequenceMapStep { list-style: none; float: left; margin-right: 0; margin-bottom: 0; }
+.BBEventRegSequenceMap .BBSequenceMapCurrentStep { font-weight:bold; }
+.BBEventRegSequenceMap .BBSequenceMapStepItem { display:block; background-color: transparent; padding: 0; text-decoration: none; color: #FFF; min-width: 0; text-align: center; font-size: 1em; min-height: 0; white-space: nowrap; }
+.BBEventRegSequenceMap .BBSequenceMapStepLink { color: #000; font-size: 1em; }
+.BBEventRegSequenceMap .BBSequenceMapStepLink:link { color: #000; font-size: 1em; }
+.BBEventRegSequenceMap .BBSequenceMapStepLink:visited { color: #000; font-size:1em; }
+.BBEventRegSequenceMap .BBSequenceMapStepLink:hover { color:#000; text-decoration: none; background-color: #EEEEEE; font-size: 1em; }
+.BBEventRegSequenceMap .BBSequenceMapStepLink:active { color: #000; font-size: 1em; }
+.BBEventRegSequenceMap .BBSequenceMapCurrentStepItem { background-color:#AAAAAA; border-color: #43645B; }
+.BBEventRegSequenceMap .BBSequenceMapContentContainer { clear:left; margin-top:20px; }
+.BBEventRegSequenceMap .BBSequenceMapContentHeader { }
+.BBEventRegSequenceMap .BBSequenceMapCommandContainer { }
+.BBEventRegSequenceMap .BBSequenceMapNavigationContainer { float:right; margin-top:15px; margin-right:25px; }
+.BBEventRegSequenceMap .BBSequenceMapNavigationButton { }
+
+
+/********   Event Registration Form ********/
+
+.Ev2_ValidationSummary { color: #EA2121; margin: 0 0 1em; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapStep { background-color:#eee; background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#999)); background: -moz-linear-gradient(center top, #eee, #999) repeat scroll 0 0 transparent; background: linear-gradient(center top, #eee, #999) repeat scroll 0 0 transparent; -pie-background: linear-gradient(center top, #eee, #999) repeat scroll 0 0 transparent; box-shadow: 0 0 0 1px #E7E7E7; margin-bottom: 2em; margin-right: 5%; width: 30%; border-radius: 0.5em; -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapStepItem { font-size: 1em; white-space: normal; word-wrap: break-word; min-height: 0; line-height: 3em; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapStepLink:link { font-size: 1em; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapStepLink:hover { background-color: #43645b; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapCurrentStepItem { background-color: #FFFFFF; color: #000000; opacity: 0.5; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapLastStep { margin: 0; }
+.BBEventRegSequenceMapContentContainer .BBEventRegSequenceMapNavigationNextButton { width: auto; margin: 0 1em; float: right; }
+.BBEventRegSequenceMapContentContainer .BBEventRegSequenceMapNavigationNextButton:hover { cursor: pointer; }
+.BBEventRegSequenceMapContentContainer .BBEventRegSequenceMapNavigationPreviousButton { width: auto; margin: 0 1em; float: left; }
+.BBEventRegSequenceMapContentContainer .BBEventRegSequenceMapNavigationPreviousButton:hover { cursor: pointer; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapContentContainer { width: 100%; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapNavigationContainer { clear:right; }
+.Ev2_SummaryHeader { /* HEADING2 */ clear: both; text-align: left; }
+.Ev2_SummaryRow { display: table-row; }
+.Ev2_SummaryCell { display: table-cell; padding: 0.5em 0 0.5em 1em; white-space: normal; }
+.Ev2_SummaryEventColumn { text-align: right; width: 33%; }
+.Ev2_SummaryPriceRow { display: table-row; }
+.Ev2_SummaryPriceTypeColumn { width: 200px; }
+.Ev2_SummaryQuantityColumn { width: 50px; text-align: right; }
+.Ev2_SummaryPriceColumn { width: 100px; text-align: right; }
+.Ev2_SummaryTotal { font-weight: bold; border-top: 1px dotted rgb(153, 153, 153); }
+.BBEventRegSequenceMap .BBEventRegSequenceMapNavigationFinishButton { background-color: #FFB278; border: 1px solid #DF7847; border-radius: 0.3em; -moz-border-radius: 0.3em; -webkit-border-radius: 0.3em; color: #FFFFFF; font-size: 15px; font-weight: bold; margin-bottom: 15px; margin-left: 15px; padding: 8px; }
+.BBEventRegSequenceMap .BBEventRegSequenceMapNavigationFinishButton:hover { cursor: pointer; cursor: hand; }
+.Ev2_RegistrationEventTitleContainer { display: block; margin-bottom: 0; }
+.Ev2_RegistrationEventDescContainer { /* HEADING3 */ display: block; margin: 1em 0 .5em 0 !important; clear: both; text-align: left; }
+.Ev2_RegistrationEventDateContainer { display: inline-block; margin-bottom: 1em; }
+.Ev2_RegistrationEventTimeContainer { display: inline-block; margin-bottom: 1em; }
+.Ev2_RegistrationEventTitle { /* HEADING2 */ clear: both; text-align: left; }
+.Ev2_RegistrationEventDate { font-size: 1em; font-style: italic; font-weight: bold; }
+.Ev2_RegistrationEventTime { font-size: 1em; font-style: italic; font-weight: bold; }
+.Ev2_RegistrantContainer { background: #ffffff; /* Old browsers */ background: -moz-linear-gradient(top, #ffffff 0%, #eee 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #eee)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #ffffff 0%, #eee 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #ffffff 0%, #eee 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #ffffff 0%, #eee 100%); /* IE10+ */ background: linear-gradient(to bottom, #ffffff 0%, #eee 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eee', GradientType=0 ); /* IE6-8 */margin-bottom: 1.5em; margin-top: 0.5em; overflow: hidden; padding: 1em; border: 2px solid #ddd; border-radius: 0.75em; -moz-border-radius: 0.75em; -webkit-border-radius: 0.75em; overflow: hidden; }
+.Ev2_Checkmark { background-image: url(images/checkmark_green_2_16.png); background-repeat: no-repeat; display: none; min-width: 16px; min-height: 16px; margin: 0 0 0 15px; vertical-align: text-top; }
+.Ev2_RegistrantLeft { float: left; }
+.Ev2_RegistrantFieldCell { min-height: 2em; padding: 0.5em 2%; width: 46%; }
+.Ev2_PhoneEmailSeparator { clear: both; }
+.Ev2_RegistrationGroups { padding: 0; }
+.Ev2_RegistrantsContainer { padding: 0; }
+.Ev2_RegistrantAddressForAllContainer { padding: 0 1em; }
+.Ev2_RegistrantUseBillingContainer { padding: 0 2%; }
+.Ev2_RegistrantEventHeader { margin-bottom: 0.5em; font-weight: bold; }
+.Ev2_RegistrantHeader { clear: both; color: #423833; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; line-height: 1.5em; margin: 0; padding: 0 0 0.25em; text-align: left; }
+.Ev2_RegistrantAddressContainer { padding: 10px 0 25px 0; }
+.Ev2_RegistrantAddressHeader { clear: both; color: #423833; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; line-height: 1.5em; margin: 0; padding: 0 0 0.25em; text-align: left; }
+.Ev2_RegistrantAddressControlLabel { float: left; overflow: hidden; }
+.Ev2_RegistrantAddressControlCell { clear: both; }
+.Ev2_RegistrantAddressControlRequire { float: left; margin-left: 1%; }
+.Ev2_RegistrantAddressControlDropDown { float: left; clear: both; }
+.Ev2_RegistrantTextBox { float: left; clear: both; }
+.Ev2_RegistrantTextArea { float: left; clear: both; }
+.Ev2_RegistrantContent { margin-left: 0; }
+.Ev2_RegistrantContent input[type="text"] { height: 1.5em; margin-top: 0.25em; width: 87%; }
+.Ev2_RegistrantContent textarea { height: 3em; margin-top: 0.25em; width: 87%; }
+.Ev2_RegistrantLink { float: right; padding-right: 10%; }
+.Ev2_RegistrantLink a { font-size: 11px; text-decoration: underline; }
+.Ev2_DidYouMeanToRegisterAs { margin-left: 1em; }
+.Ev2_SameAsPreviousTable { display: table; table-layout: fixed; width: 100%; }
+.Ev2_SameAsPrevious_Row { display: table-row; }
+.Ev2_SameAsPrevious_Item { display: table-cell; padding: 0.5em; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width: 33%; }
+.Ev2_TitleCheckbox { margin: 0.5em; width: 1.5em; height: 1.5em; }
+.Ev2_TitleLabel { /* HEADING2 */ clear: both; text-align: left; }
+.Ev2_DateTimeContainer { margin: 1em 0 0; }
+.Ev2_DateTimeLeftContainer { display: block; float: left; width: 50%; min-height: 0; }
+.Ev2_DateTimeRightContainer { display: block; float: right; width: 50%; min-height: 0; }
+.Ev2_DateHeaderLabel { display: block; font-size: 13px; margin-bottom: 4px; margin-top: 8px; text-align: center; width: auto; }
+.Ev2_DateHeaderLabel:empty { display: none; }
+.Ev2_DateContainer { background-image: url("images/calendar_45.png"); background-position: left center; background-repeat: no-repeat; background-size: 3em 2.5em; display: block; margin: 0 0 0 2em; min-height: 0; vertical-align: baseline; width: 95%; }
+.Ev2_DateLabel { color: #444444; display: block; font-size: 1.5em; letter-spacing: -0.5px; margin-left: 3em; padding: 0.75em 0.75em 0.75em 0; width: auto; }
+.Ev2_TimeContainer { background-image: url("images/clock_45.png"); background-position: left center; background-repeat: no-repeat; background-size: 3em 3em; display: block; margin: 0 0 0 2em; min-height: 0; vertical-align: baseline; width: 95%; }
+.Ev2_TimeLabels { color: #444444; display: block; font-size: 1.5em; letter-spacing: -0.5px; margin-left: 3em; padding: 0.75em 0.75em 0.75em 0; width: auto; }
+.Ev2_StartTimeLabel { color: #444444; font-size: 1em; letter-spacing: -0.5px; }
+.Ev2_EndTimeLabel { color: #444444; font-size: 1em; letter-spacing: -0.5px; }
+.Ev2_TimespanSeparatorLabel { color: #444444; letter-spacing: -0.5px; font-size: 13px; vertical-align: top; }
+.Ev2_DescriptionContainer { display: block; margin: 0; padding: 0.5em 1em; width: auto; }
+.Ev2_PriceTypesContainer { margin: 0 1em; border: 1px dotted #999999; }
+.Ev2_PriceTypesTable { display: table; width: 100%; border: 0 none; }
+.Ev2_PriceTypesHeader { display: table-header-group; background: #5a4d47; /* Old browsers */ background: -moz-linear-gradient(top, #5a4d47 0%, #433a38 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5a4d47), color-stop(100%, #433a38)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #5a4d47 0%, #433a38 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #5a4d47 0%, #433a38 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #5a4d47 0%, #433a38 100%); /* IE10+ */ background: linear-gradient(to bottom, #5a4d47 0%, #433a38 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a4d47', endColorstr='#433a38', GradientType=0 ); /* IE6-8 */
+color: rgb(255, 255, 255); border: 0 none; font-size: 1em; font-weight: bold; text-align: center; }
+.Ev2_PriceTypesCell { border-right: 0 none; border-left: 1px dotted #999999; display: table-cell; padding: 0.5em 1em; text-align: center; vertical-align: middle; white-space: normal; }
+.Ev2_PriceTypesCell:first-child { border-left: 0 none; text-align: left; }
+.Ev2_PriceTypesRow { display: table-row; background-color: rgb(240, 240, 240); color: rgb(51, 51, 51); border-right: 1px dotted rgb(153, 153, 153); }
+.Ev2_PriceTypeNameColumn { width: 25%; }
+.Ev2_PriceTypeQtyColumn input { width: 20px; text-align: center; }
+.Ev2_PriceTypeAmountColumn { }
+.Ev2_PriceTypeValidatorColumn { width: 50%; }
+.Ev2_PriceName { white-space: normal; font-weight: bold; float: none !important; }
+.Ev2_PriceCount { font-size: x-small; }
+.Ev2_DonationContainer { margin: 2em 0; }
+.Ev2_EventContainer { margin: 2em 0; }
+.Ev2_SummaryContainer { margin: 3em 0; }
+.Ev2_OrgRegContainer { width:246px; height:46px; float:right; clear:right; font-weight:bold;display:block; margin-right: 25px; }
+.Ev2_OrgRegText { margin-top:12px; font-size:15px; text-align: center; }
+.Ev2_RegistrationStepContainer { margin: 20px 0; }
+
+/***** End Event Registration Form styles *****/
