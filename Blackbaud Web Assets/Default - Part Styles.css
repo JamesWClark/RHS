@@ -950,7 +950,17 @@ input[id$="txtAlias"] { width:33%; }
 .Ev2_RegistrationEventTitle { /* HEADING2 */ clear: both; text-align: left; }
 .Ev2_RegistrationEventDate { font-size: 1em; font-style: italic; font-weight: bold; }
 .Ev2_RegistrationEventTime { font-size: 1em; font-style: italic; font-weight: bold; }
-.Ev2_RegistrantContainer { background: #ffffff; /* Old browsers */ background: -moz-linear-gradient(top, #ffffff 0%, #eee 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #eee)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #ffffff 0%, #eee 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #ffffff 0%, #eee 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #ffffff 0%, #eee 100%); /* IE10+ */ background: linear-gradient(to bottom, #ffffff 0%, #eee 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eee', GradientType=0 ); /* IE6-8 */margin-bottom: 1.5em; margin-top: 0.5em; overflow: hidden; padding: 1em; border: 2px solid #ddd; border-radius: 0.75em; -moz-border-radius: 0.75em; -webkit-border-radius: 0.75em; overflow: hidden; }
+.Ev2_RegistrantContainer { /*changed by jw 3-4-14 to remove fade to black in IE */
+	background: #ffffff; /* Old browsers */
+	background: linear-gradient(to bottom, white , lightgrey);
+	margin-bottom: 1.5em;
+	margin-top: 0.5em;
+	overflow: hidden;
+	padding: 1em;
+	border: 2px solid #ddd;
+	border-radius: 0.75em;
+	overflow: hidden;
+}
 .Ev2_Checkmark { background-image: url(images/checkmark_green_2_16.png); background-repeat: no-repeat; display: none; min-width: 16px; min-height: 16px; margin: 0 0 0 15px; vertical-align: text-top; }
 .Ev2_RegistrantLeft { float: left; }
 .Ev2_RegistrantFieldCell { min-height: 2em; padding: 0.5em 2%; width: 46%; }
