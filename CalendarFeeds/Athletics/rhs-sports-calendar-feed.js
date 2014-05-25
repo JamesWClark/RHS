@@ -78,11 +78,11 @@ function setMinMax(calStartYear, calFinishYear) {
     switch (season.toLowerCase()) {
         case "winter":
             startMin = calStartYear + "-11-01";
-            startMax = calFinishYear + "-04-01";
+            startMax = calFinishYear + "-04-15";
             break;
         case "spring":
-            startMin = calStartYear + "-01-01";
-            startMax = calStartYear + "-06-01";
+            startMin = calFinishYear + "-01-01";
+            startMax = calFinishYear + "-06-15";
             break;
         case "fall":
             startMin = calStartYear + "-08-01";
