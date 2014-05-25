@@ -9,20 +9,20 @@
  *
  * A sample of HTML that uses this code:
  *
- * <div id="calendar-feed-select"></div>
- * <div id="calendar-feed">
- *     <select id="calendar-feed-select" onchange="updateCalendar(this);"></select>
+ * <div id="calendar-feed-select-container">
+ *     <p><select id="calendar-feed-select" onchange="updateCalendar(this);"></select></p>
  * </div>
+ * <div id="calendar-feed"></div>
  * <script src="https://www.rockhursths.edu/file/admin---webdev-documents/moment.min.js"></script>
  * <script src="https://www.rockhursths.edu/file/admin---webdev-documents/jw-clark---web-assets/rhs-sports-calendar-feed.js"></script>
  * <script>
- * 
- *     var calendarId = 'rockhursths.edu_fpdevts40susg3j1ueoubsrrt8@group.calendar.google.com'; //get this value from calendar settings
+ *
+ *     var calendarId = 'rockhursths.edu_ltou5f03c1snr1seu9e107r8i0@group.calendar.google.com'; //get this value from calendar settings
  *     var earliestYear = 2013; //the first year Google Calendar was implemented for this organization
- *     var season = 'Fall'; //other options: Spring, Winter, Summer
- * 
+ *     var season = 'Winter'; //options: Spring, Winter, Summer, Fall
+ *
  *     $(document).ready(init());
- * 
+ *
  * </script>
  * <noscript>
  *     It seems JavaScript is disabled in your web browser. You may find the same information in the Master Calendar under Quick Links.
