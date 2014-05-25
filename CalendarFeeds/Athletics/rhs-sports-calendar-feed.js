@@ -53,13 +53,14 @@ function getCalendar(calendarId) {
 function init() {
     var calStartYear; //display range start
     var calFinishYear; //display range finish
-    var currentYear = parseInt(moment().format("YYYY")); //at time of client visit
     var now = moment(); //at time of client visit
+    var currentYear = parseInt(moment(now).format("YYYY")); //at time of client visit
     var start = moment(currentYear + "-" + rolloverDate); //rollover start
     var finish = moment(start).add('years', 1); //rollover finish
-    var now_month_is_less_than_start_month = parseInt(moment(now).format('MM')) < parseInt(moment(start).format('MM'));
+    var roll = currentYear + "-" + rolloverDate;
+    var isRollover = now.diff(roll) < 0;
 
-    if (now_month_is_less_than_start_month) {
+    if (isRollover) {
         calStartYear = currentYear - 1;
         calFinishYear = currentYear;
     } else {
