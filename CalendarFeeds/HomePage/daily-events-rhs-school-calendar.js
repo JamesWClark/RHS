@@ -130,12 +130,12 @@ function sortEntries(entries) {
 function writeHtml(entry) {
     //this function writes HTML to the DOM on a per calendar entry basis
     //modify the object in the processEntry() method before pulling its properties here
-    var html = '<tr><td><a href="' + entry.link + '" target="_blank">' + entry.title + '</a>'
+    var html = '<tr><td><strong><a href="' + entry.link + '" target="_blank">' + entry.title + '</a></strong>'
         + '<br /><span style="color: #666">' + getTimeHtml(entry.startTime, entry.endTime) + '</span>';
     if (entry.description.length > 0)
         html += '<br />' + entry.description;
     if (entry.location.length > 0)
-        html += '<br /><a href="https://maps.google.com/maps?q=' + entry.location + '&hl=en" target="_blank">' + entry.location + '</a>';
+        html += '<br /><span style="font-color:black;">Location: </span><a href="https://maps.google.com/maps?q=' + entry.location + '&hl=en" target="_blank">' + entry.location + '</a>';
     html += '</td></tr><tr><td>&nbsp;</td></tr>';
 
     $('#rhs-home-daily-events-feed-results > tbody:last').append(html);
@@ -197,6 +197,7 @@ function getTimeHtml(start, finish) {
     } else //a span of 24-hour events, midnight to midnight (like School & Offices closed over a three day period)
         return sDate + ' to ' + fDate;
 }
+/** prints 5:55 pm as TBD */
 function evalTBD(time) {
     var t = moment(time).format('h:mm a')
     if (t === '5:55 pm')
