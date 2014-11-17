@@ -2,19 +2,20 @@
  * Daily Events by J.W. Clark
  * Published for Rockhurst High School
  * July 17, 2013
- * Updated November 6, 2013
+ * Updated November 17, 2014
  *
  * 1. get a series of feeds from a list of google calendars
  * 2. if today has less than 4 events, continue searching forward until at least 4 events are found.
  * 3. the search will end at the end of the feed
  *
  * https://github.com/JamesWClark/RHS/blob/master/CalendarFeeds/HomePage/daily-events-rhs-school-calendar.js
- *
- * Version 2
+ * example json data: http://www.jsonmate.com/permalink/546a52ce8622dbdf0c422f93
+ * another example:   http://www.jsonmate.com/permalink/546a796e8622dbdf0c422f95
+ * Version 3
  */
 
 //VARIABLES
-var KEY = 'AIzaSyDU1yMxRcZrs8M_dT9SeLxs6hT7Nzmqjyk';
+var KEY = 'AIzaSyDU1yMxRcZrs8M_dT9SeLxs6hT7Nzmqjyk'; //get from calendar@rockhursths.edu account, google api calendars
 var MINIMUM_EVENTS = 4;
 var DAYS_TO_SEARCH_FORWARD = 7;
 
@@ -62,9 +63,9 @@ function init() {
 }
 function getCalendarFeeds() {
     for (var i = 0; i < CALENDARS.length; i++) {
-        var https = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDARS[i] + '/events?alt=json&orderby=starttime&sortorder=ascending&singleevents=true&start-min=' + startMin + '&start-max=' + startMax + '&key=' + KEY;
+        var https = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDARS[i] + '/events?singleEvents=true&orderBy=startTime&sortOrder=ascending&timeMin=' + moment(startMin).format() + '&timeMax=' + moment(startMax).format() + '&key=' + KEY;
         $.getJSON(https, function (response) {
-            processFeed(response.feed);
+            processFeed(response);
 		});
     }
 }
@@ -75,12 +76,13 @@ function processFeed(feed) {
 	//why? google automatically injects the max-results=25 parameter into the calendar query
 	//so, if results = 46, you still only get 25 entries and the for loop hits null results
 	//alternate: ?alt=json&max-results=100&orderby=starttime&sortorder=ascending&singleevents=true
-    var numResults = feed.openSearch$totalResults.$t; 
+    var numResults = feed['items'].length;
     if (numResults > 25)
         numResults = 25;
     
     for (var i = 0; i < numResults; i++) { //process every entry in the feed
-        processEntry(feed.entry[i]);
+        processEntry(feed['items'][i]);
+        console.log('processing ' + feed['summary']);
     }
     if (feedsProcessedCount === CALENDARS.length) { //the ajax requests are complete, sort and print
         printEntries();
@@ -90,15 +92,26 @@ function processEntry(entry) {
     var e = getEntryBase(entry);
     entries.push(e);
 }
+//i had to change the right side of these equations for v3
 function getEntryBase(entry) {
     var e = {};
-    e.id = entry.id.$t;
-    e.title = entry.title.$t;
-    e.location = entry.gd$where[0].valueString;
-    e.description = entry.content.$t;
-    e.link = entry.link[0].href;
-    e.startTime = entry.gd$when[0].startTime;
-    e.endTime = entry.gd$when[0].endTime;
+    e.id = entry.id;
+    e.title = entry.summary;
+    e.location = entry.location;
+    e.description = entry.description;
+    e.link = entry.htmlLink;
+    var start = entry.start;
+    var end = entry.end;
+    if (start.hasOwnProperty('date')) {
+        e.startTime = entry.start.date;
+    } else {
+        e.startTime = entry.start.dateTime; //assumption: has dateTime
+    }
+    if (end.hasOwnProperty('date')) {
+        e.endTime = entry.end.date;
+    } else {
+        e.endTime = entry.end.dateTime; //assumption: has dateTime
+    }
     return e;
 }
 function printEntries() {
@@ -128,9 +141,10 @@ function writeHtml(entry) {
     //modify the object in the processEntry() method before pulling its properties here
     var html = '<tr><td><strong><a href="' + entry.link + '" target="_blank">' + entry.title + '</a></strong>'
         + '<br /><span style="color: #666">' + getTimeHtml(entry.startTime, entry.endTime) + '</span>';
-    if (entry.description.length > 0)
+    if (entry.description && entry.description.length > 0) { //has description and description length
         html += '<br />' + entry.description;
-    if (entry.location.length > 0)
+    }
+    if (entry.location && entry.location.length > 0)
         html += '<br /><span style="font-color:black;">Location: </span><a href="https://maps.google.com/maps?q=' + entry.location + '&hl=en" target="_blank">' + entry.location + '</a>';
     html += '</td></tr><tr><td>&nbsp;</td></tr>';
 
