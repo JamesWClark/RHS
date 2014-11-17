@@ -14,6 +14,7 @@
  */
 
 //VARIABLES
+var KEY = 'AIzaSyDU1yMxRcZrs8M_dT9SeLxs6hT7Nzmqjyk';
 var MINIMUM_EVENTS = 4;
 var DAYS_TO_SEARCH_FORWARD = 7;
 
@@ -61,15 +62,10 @@ function init() {
 }
 function getCalendarFeeds() {
     for (var i = 0; i < CALENDARS.length; i++) {
-        var https = 'https://www.google.com/calendar/feeds/' + CALENDARS[i] + '/public/full?alt=json&orderby=starttime&sortorder=ascending&singleevents=true&start-min=' + startMin + '&start-max=' + startMax;
-        $.ajax({
-            url: https,
-            dataType: 'jsonp',
-            type: "GET",
-            success: function (response) {
-                processFeed(response.feed);
-            }
-        });
+        var https = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDARS[i] + '/events?alt=json&orderby=starttime&sortorder=ascending&singleevents=true&start-min=' + startMin + '&start-max=' + startMax + '&key=' + KEY;
+        $.getJSON(https, function (response) {
+            processFeed(response.feed);
+		});
     }
 }
 

@@ -7,3 +7,12 @@ C:\LocalStorage\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook_Photos.Pr
 C:\LocalStorage\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook Photos.csproj.GenerateResource.Cache
 C:\LocalStorage\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook Photos.exe
 C:\LocalStorage\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook Photos.pdb
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\bin\Debug\Yearbook Photos.exe.config
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook Photos.exe
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook Photos.pdb
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\bin\Debug\Yearbook Photos.exe
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\bin\Debug\Yearbook Photos.pdb
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook Photos.csprojResolveAssemblyReference.cache
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook_Photos.Main.resources
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook_Photos.Properties.Resources.resources
+C:\LocalStorage\git\RHS\Yearbook Photos\Yearbook Photos\obj\Debug\Yearbook Photos.csproj.GenerateResource.Cache
