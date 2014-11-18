@@ -29,24 +29,19 @@
  * </noscript>
  */
 
-var maxResults = 100;
+var KEY = 'AIzaSyDU1yMxRcZrs8M_dT9SeLxs6hT7Nzmqjyk'; //get from calendar@rockhursths.edu account, google developer api console
+//var maxResults = 100; //i think the new limit is default @ 250
 var timePlaceholder = '5:55 pm'; //any time that matches this will print as TBD
-var unknown_location_placeholders_array = ['?','??','???','????','?????','tbd','TBD','unknown']; //if any of these are encountered in the location field, the hyperlink will be removed
+var unknown_location_placeholders_array = ['?','??','???','????','?????','tbd','TBD','unknown','undefined']; //if any of these are encountered in the location field, the hyperlink will be removed
 var rolloverDate = "05-21"; //format as MM-DD, when the year rolls over on this MM-DD date, the calendars pivot for client display
 var startMin;
 var startMax;
 
 /** called by document.ready */
 function getCalendar(calendarId) {
-    var https = 'https://www.google.com/calendar/feeds/' + calendarId
-        + '/public/full?alt=json&max-results=' + maxResults + '&orderby=starttime&sortorder=ascending&singleevents=true&start-min=' + startMin + '&start-max=' + startMax;
-    $.ajax({
-        url: https,
-        dataType: 'jsonp',
-        type: "GET",
-        success: function (response) {
-            printFeed(response.feed);
-        }
+    var https = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?singleEvents=true&orderBy=startTime&sortOrder=ascending&timeMin=' + moment(startMin).format() + '&timeMax=' + moment(startMax).format() + '&key=' + KEY;
+    $.getJSON(https, function (response) {
+        printFeed(response);
     });
 }
 /** called one time by $(document).ready() */
@@ -112,27 +107,41 @@ function setGoogleCalendarButton(calendarId) {
 /** called by getCalendar */
 function printFeed(feed) {
     var html = '<table id="rhs-sports-calendar-feed-table"><tr><th>Event</th><th>Date</th><th>Time</th><th>Location</th></tr>';
-    var entries = feed.entry || [];
-    for (var i = 0; i < entries.length; i++) {
-        var title = entries[i].title.$t;
-        var start = entries[i].gd$when[0].startTime;
-        //var end = entries[i].gd$when[0].endTime;
-        var description = entries[i].content.$t;
-        var location = entries[i].gd$where[0].valueString;
-        var link = entries[i].link[0].href;
+    var entries = feed['items'] || [];
+    for (var i in entries) {
+        var e = {};
+        e.id = entries[i].id;
+        e.title = entries[i].summary;
+        e.location = entries[i].location;
+        e.description = entries[i].description;
+        e.link = entries[i].htmlLink;
+        var start = entries[i].start;
+        var end = entries[i].end;
+        if (start.hasOwnProperty('date')) {
+            e.start = entries[i].start.date;
+        } else {
+            e.start = entries[i].start.dateTime; //assumption: has dateTime
+        }
+        /*if (end.hasOwnProperty('date')) {
+            e.endTime = entry.end.date;
+        } else {
+            e.endTime = entry.end.dateTime; //assumption: has dateTime
+        }*/
 
         var marginRow = '<tr class="rhs-sports-calendar-feed-margin-row">';
         html += '<tr>';
-        html += '<td><a href="' + link + '" target="_blank">' + title + '</a></td>';
-        html += '<td>' + moment(start).format('MMM DD') + '</td>';
-        html += '<td>' + evalTBD(start) + '</td>';
-        if (unknown_location_placeholders_array.indexOf(location) > -1) //don't show map if text matches the unknownlocations list
-            html += '<td>' + location + '</td>';
-        else
-            html += '<td><a href="https://maps.google.com/maps?q=' + location + '&hl=en" target="_blank">' + location + ' </a></td>';
+        html += '<td><a href="' + e.link + '" target="_blank">' + e.title + '</a></td>';
+        html += '<td>' + moment(e.start).format('MMM DD') + '</td>';
+        html += '<td>' + evalTBD(e.start) + '</td>';
+        if (e.location && e.location.trim().length > 0) {
+            if (unknown_location_placeholders_array.indexOf(e.location) > -1) //don't show map if text matches the unknownlocations list
+                html += '<td>TBD</td>';
+            else
+                html += '<td><a href="https://maps.google.com/maps?q=' + e.location + '&hl=en" target="_blank">' + e.location + ' </a></td>';
+        }
         html += '</tr>';
-        if (description.trim().length > 0)
-            html += '<tr><td colspan="4">' + description + '</td></tr>';
+        if (e.description && e.description.trim().length > 0)
+            html += '<tr><td colspan="4">' + e.description + '</td></tr>';
         html += '<tr class="rhs-sports-calendar-feed-table-row-spacer"><td colspan="4"></td></tr>';
     }
     html += '</table><br />';

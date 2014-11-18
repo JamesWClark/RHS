@@ -1,22 +1,20 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link href="rhs-sports-calendar-feed.css" rel="stylesheet" />
 <div id="calendar-feed-select-container">
-    <p><select id="calendar-feed-select" onchange="updateCalendar(this);"></select></p>
+    <select id="calendar-feed-select" onchange="updateCalendar(this);"></select>
+    <p>&nbsp;</p>
 </div>
 <div id="calendar-feed"></div>
 <script src="https://www.rockhursths.edu/file/admin---webdev-documents/moment.min.js"></script>
-<!--<script src="https://www.rockhursths.edu/file/admin---webdev-documents/jw-clark---web-assets/rhs-sports-calendar-feed.js"></script>-->
 <script src="rhs-sports-calendar-feed.js"></script>
 <script>
 
-    //var calendarId = 'rockhursths.edu_kio96eqdtd669lk590o1brcr2s@group.calendar.google.com'; //test calendar for each season, ranging from 2013-2017
-    var calendarId = 'rockhursths.edu_b2sg20067asnpm5bunlbk07hes@group.calendar.google.com'; //football
-    //var calendarId = 'rockhursths.edu_0d2i75kvpcgimrga4lfsihvod4@group.calendar.google.com'; //baseball
-    //var calendarId = 'rockhursths.edu_89fbs6i2rm7qncgk5ttjd95uao@group.calendar.google.com'; //basketball
+    var calendarId = 'rockhursths.edu_89fbs6i2rm7qncgk5ttjd95uao@group.calendar.google.com'; //get this value from calendar settings
     var earliestYear = 2013; //the first year Google Calendar was implemented for this organization
-    var season = 'fall'; //other options: Spring, Winter, Summer
+    var season = 'Winter'; //other options: Spring, Winter, Summer
 
     $(document).ready(init());
+
 
 </script>
 <noscript>

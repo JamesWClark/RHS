@@ -15,7 +15,7 @@
  */
 
 //VARIABLES
-var KEY = 'AIzaSyDU1yMxRcZrs8M_dT9SeLxs6hT7Nzmqjyk'; //get from calendar@rockhursths.edu account, google api calendars
+var KEY = 'AIzaSyDU1yMxRcZrs8M_dT9SeLxs6hT7Nzmqjyk'; //get from calendar@rockhursths.edu account, google developer api console
 var MINIMUM_EVENTS = 4;
 var DAYS_TO_SEARCH_FORWARD = 7;
 
