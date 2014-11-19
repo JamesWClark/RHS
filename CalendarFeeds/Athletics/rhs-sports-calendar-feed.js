@@ -40,8 +40,13 @@ var startMax;
 /** called by document.ready */
 function getCalendar(calendarId) {
     var https = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?singleEvents=true&orderBy=startTime&sortOrder=ascending&timeMin=' + moment(startMin).format() + '&timeMax=' + moment(startMax).format() + '&key=' + KEY;
-    $.getJSON(https, function (response) {
-        printFeed(response);
+    $.ajax({
+        url: https,
+        dataType: 'jsonp',
+        type: "GET",
+        success: function (response) {
+            printFeed(response);
+        }
     });
 }
 /** called one time by $(document).ready() */

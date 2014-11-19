@@ -15,7 +15,7 @@
  */
 
 //VARIABLES
-var KEY = 'AIzaSyDU1yMxRcZrs8M_dT9SeLxs6hT7Nzmqjyk'; //get from calendar@rockhursths.edu account, google api calendars
+var KEY = 'AIzaSyDU1yMxRcZrs8M_dT9SeLxs6hT7Nzmqjyk'; //get from calendar@rockhursths.edu account, google developer api console
 var MINIMUM_EVENTS = 4;
 var DAYS_TO_SEARCH_FORWARD = 7;
 
@@ -64,25 +64,29 @@ function init() {
 function getCalendarFeeds() {
     for (var i = 0; i < CALENDARS.length; i++) {
         var https = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDARS[i] + '/events?singleEvents=true&orderBy=startTime&sortOrder=ascending&timeMin=' + moment(startMin).format() + '&timeMax=' + moment(startMax).format() + '&key=' + KEY;
-        $.getJSON(https, function (response) {
-            processFeed(response);
-		});
+        $.ajax({
+            url: https,
+            dataType: 'jsonp',
+            type: "GET",
+            success: function (response) {
+                processFeed(response);
+            }
+        });
     }
 }
 
 function processFeed(feed) {
     feedsProcessedCount++;
 
-	//why? google automatically injects the max-results=25 parameter into the calendar query
-	//so, if results = 46, you still only get 25 entries and the for loop hits null results
-	//alternate: ?alt=json&max-results=100&orderby=starttime&sortorder=ascending&singleevents=true
+    //why? google automatically injects the max-results=25 parameter into the calendar query
+    //so, if results = 46, you still only get 25 entries and the for loop hits null results
+    //alternate: ?alt=json&max-results=100&orderby=starttime&sortorder=ascending&singleevents=true
     var numResults = feed['items'].length;
     if (numResults > 25)
         numResults = 25;
-    
+
     for (var i = 0; i < numResults; i++) { //process every entry in the feed
         processEntry(feed['items'][i]);
-        console.log('processing ' + feed['summary']);
     }
     if (feedsProcessedCount === CALENDARS.length) { //the ajax requests are complete, sort and print
         printEntries();
@@ -120,7 +124,7 @@ function printEntries() {
     //now is between the entry's start of day and end of day
     while (moment(today.endOf('day')).diff(moment(entries[count].startTime)) > 0) {
         writeHtml(entries[count++]);
-	}
+    }
     if (count < MINIMUM_EVENTS) { //minimum count not satisifed, pull from the extra entries
         var deficit = MINIMUM_EVENTS - count;
         var length = entries.length - count;
@@ -159,7 +163,7 @@ function getTimeHtml(start, finish) {
     var fIndexT = finish.indexOf('T');
     var sMoment = moment(start);
     var fMoment = moment(finish);
-	
+
     if (fMoment.diff(sMoment, 'days') === 1 && sIndexT === -1) { //single all day event, no times
         return sMoment.format('YYYY-MM-DD');
     } else if (fMoment.diff(sMoment, 'days') === 0 && sIndexT !== -1) { //single day, span of time
