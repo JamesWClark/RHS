@@ -203,7 +203,7 @@ function getTimeHtml(start, finish) {
         return sDate;
     } else if (diff === 0 && sIndexT !== -1) { //single day, span of time
         if (sTime === fTime) //start and finish time are the same, no need to show twice (reader will treat this as event with start time only)
-            return sDate + ', ' + sTime;
+          return sDate + ', ' + evalTBD(sTime);
         else
             return sDate + ', ' + sTime + ' to ' + fTime;
     } else if (sDate !== fDate && sIndexT !== -1) { //span across dates + start and finish time
@@ -213,11 +213,10 @@ function getTimeHtml(start, finish) {
 }
 /** prints 5:55 pm as TBD */
 function evalTBD(time) {
-    var t = moment(time).format('h:mm a')
-    if (t === '5:55 pm')
+    if (time === '5:55 pm')
         return 'TBD';
     else
-        return t;
+        return time;
 }
 function log(msg) {
     if (window.console && console.log) {
