@@ -1,6 +1,6 @@
-﻿<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <div>
-    <iframe frameborder="0" height="750" scrolling="no" src="https://www.google.com/calendar/embed?src=calendar%40rockhursths.edu&amp;src=rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com&amp;src=rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com&amp;src=rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com&amp;src=rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com&amp;src=rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com&amp;src=rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com&amp;src=rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com&amp;src=rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com&amp;src=rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com&amp;src=rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com&amp;src=rockhursths.edu_t8eq93kjsq5tklpnd1kke45pus%40group.calendar.google.com&amp;src=rockhursths.edu_b2sg20067asnpm5bunlbk07hes%40group.calendar.google.com&amp;src=rockhursths.edu_017ca5s1pkqlo26p86sq0dqta0%40group.calendar.google.com&amp;src=rockhursths.edu_6r3vm39418qahh989qrhqn3hd4%40group.calendar.google.com&amp;src=rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com" style="border: 0;" width="100%"></iframe>
+    <iframe id="rhs-master-calendar" frameborder="0" height="750" scrolling="no" src="https://www.google.com/calendar/embed?src=calendar%40rockhursths.edu&amp;src=rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com&amp;src=rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com&amp;src=rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com&amp;src=rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com&amp;src=rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com&amp;src=rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com&amp;src=rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com&amp;src=rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com&amp;src=rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com&amp;src=rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com&amp;src=rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com&amp;src=rockhursths.edu_89fbs6i2rm7qncgk5ttjd95uao%40group.calendar.google.com&amp;src=rockhursths.edu_t8eq93kjsq5tklpnd1kke45pus%40group.calendar.google.com&amp;src=rockhursths.edu_b2sg20067asnpm5bunlbk07hes%40group.calendar.google.com&amp;src=rockhursths.edu_017ca5s1pkqlo26p86sq0dqta0%40group.calendar.google.com&amp;src=rockhursths.edu_6r3vm39418qahh989qrhqn3hd4%40group.calendar.google.com&amp;src=rockhursths.edu_fpdevts40susg3j1ueoubsrrt8%40group.calendar.google.com&amp;src=rockhursths.edu_0d2i75kvpcgimrga4lfsihvod4%40group.calendar.google.com&amp;src=rockhursths.edu_qpnh3lidgqcdnjhjmk797igti4%40group.calendar.google.com&amp;src=rockhursths.edu_t9rvkvj3jvq11s7u8269nsc14k%40group.calendar.google.com&amp;src=rockhursths.edu_odclime8l2bcmde6g8u856sn2s%40group.calendar.google.com&amp;src=rockhursths.edu_nrv610hprus0metm20otq39bks%40group.calendar.google.com" style="border: 0;" width="100%"></iframe>
 </div>
 <p>
     <br />
@@ -79,6 +79,7 @@
 <script>
     function updateFrameSrc() {
         $('iframe').attr('src', getSource());
+        convertTBD();
     }
     function getSource() {
         var src = 'https://www.google.com/calendar/embed?';
@@ -93,5 +94,16 @@
     }
     function clearSelections() {
         $('input').prop('checked', false);
+    }
+    //registers an event handler for calendar load, changes all 5:55 pm to TBD
+    $(function () {
+        var iframe = $('#rhs-master-calendar');
+        iframe.load(function () {
+            iframe.contents().find('.te-t').text('TBD');
+        });
+    });
+    function convertTBD() {
+
+
     }
 </script>
