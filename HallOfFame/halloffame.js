@@ -23,9 +23,11 @@ $(document).ready(function() {
         $('td').each(function(index, html) {
             var name = $(this).text();
             if (people.hasOwnProperty(name)) {
-               $(this).wrapInner('<a href="#"></a>')
+               $(this).wrapInner('<a href="" data-name="' + name + '"></a>');
             }
         });
         
+        // TODO: http://jsfiddle.net/06nLLtbb/1/
+        // and also - stop using <a> tags and just click the element...
     });
 });
