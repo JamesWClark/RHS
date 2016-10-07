@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Athletics Google Calendar Events by J.W. Clark
  * Published for Rockhurst High School
  * Last Update: January 24, 2014
@@ -78,16 +78,16 @@ function init() {
 function setMinMax(calStartYear, calFinishYear) {
     switch (season.toLowerCase()) {
         case "winter":
-            startMin = calStartYear + "-11-01";
-            startMax = calFinishYear + "-04-15";
+            startMin = calStartYear + "-10-01";  // october 1st
+            startMax = calFinishYear + "-04-15"; // april 15th
             break;
         case "spring":
-            startMin = calFinishYear + "-01-01";
-            startMax = calFinishYear + "-06-15";
+            startMin = calFinishYear + "-12-01"; // january 1st
+            startMax = calFinishYear + "-06-15"; // june 15th
             break;
         case "fall":
-            startMin = calStartYear + "-08-01";
-            startMax = calStartYear + "-12-31";
+            startMin = calStartYear + "-07-01";  // august 1st
+            startMax = calStartYear + "-12-31";  // december 31st
             break;
     }
 }
