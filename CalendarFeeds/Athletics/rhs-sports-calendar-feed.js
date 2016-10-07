@@ -82,7 +82,7 @@ function setMinMax(calStartYear, calFinishYear) {
             startMax = calFinishYear + "-04-15"; // april 15th
             break;
         case "spring":
-            startMin = calFinishYear + "-12-01"; // january 1st
+            startMin = calFinishYear + "-01-01"; // january 1st
             startMax = calFinishYear + "-06-15"; // june 15th
             break;
         case "fall":
