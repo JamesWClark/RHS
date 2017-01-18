@@ -9,10 +9,6 @@
 
 $(document).ready(function () {
     
-    var log = function (msg) {
-        console.log(msg);
-    };
-    
     // http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
     String.prototype.hashCode = function(){
         var hash = 0;
