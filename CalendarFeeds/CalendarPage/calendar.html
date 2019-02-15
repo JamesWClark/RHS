@@ -4,9 +4,9 @@
 </div>
 <p>
     <br />
-    <button onclick="updateFrameSrc(); return false;">Update Calendar</button>&nbsp;
-    <button value="Submit" type="submit">Reset Calendar</button>&nbsp;
-    <button onclick="clearSelections(); return false;">Clear Selections</button>
+    <input type="button" value="Update Calendar" onclick="updateFrameSrc(); return false;">
+    <input type="button" value="Reset Calendar" type="submit">
+    <input type="button" value="Clear Selections" onclick="clearSelections(); return false;">
 </p>
 <p>&nbsp;</p>
 <div>
@@ -14,22 +14,22 @@
         <tbody>
             <tr>
                 <td width="33%">
-                    <input type="checkbox" name="RHS School Calendar" value="calendar%40rockhursths.edu" checked="checked" />RHS School Calendar<br />
-                    <input type="checkbox" name="RHS - Academics" value="rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com" checked="checked" />RHS - Academics<br />
-                    <input type="checkbox" name="RHS - Admissions" value="rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com" checked="checked" />RHS - Admissions<br />
-                    <input type="checkbox" name="RHS - Alumni" value="rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com" checked="checked" />RHS - Alumni<br />
+                    <label><input type="checkbox" name="RHS School Calendar" value="calendar%40rockhursths.edu" checked="checked" />RHS School Calendar</label><br />
+                    <label><input type="checkbox" name="RHS - Academics" value="rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com" checked="checked" />RHS - Academics</label><br />
+                    <label><input type="checkbox" name="RHS - Admissions" value="rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com" checked="checked" />RHS - Admissions</label><br />
+                    <label><input type="checkbox" name="RHS - Alumni" value="rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com" checked="checked" />RHS - Alumni</label><br />
                 </td>
                 <td width="33%">
-                    <input type="checkbox" name="RHS - College Placement" value="rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com" checked="checked" />RHS - College Placement<br />
-                    <input type="checkbox" name="RHS - Faculty &amp; Staff" value="rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com" checked="checked" />RHS - Faculty &amp; Staff<br />
-                    <input type="checkbox" name="RHS - Ignatian Service" value="rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com" checked="checked" />RHS - Ignatian Service<br />
-                    <input type="checkbox" name="RHS - Parents" value="rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com" checked="checked" />RHS - Parents<br />
+                    <label><input type="checkbox" name="RHS - College Placement" value="rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com" checked="checked" />RHS - College Placement</label><br />
+                    <label><input type="checkbox" name="RHS - Faculty &amp; Staff" value="rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com" checked="checked" />RHS - Faculty &amp; Staff</label><br />
+                    <label><input type="checkbox" name="RHS - Ignatian Service" value="rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com" checked="checked" />RHS - Ignatian Service</label><br />
+                    <label><input type="checkbox" name="RHS - Parents" value="rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com" checked="checked" />RHS - Parents</label><br />
                 </td>
                 <td width="33%">
-                    <input type="checkbox" name="RHS - Pastoral Life" value="rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com" checked="checked" />RHS - Pastoral Life<br />
-                    <input type="checkbox" name="RHS - Performing Arts" value="rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com" checked="checked" />RHS - Performing Arts<br />
-                    <input type="checkbox" name="RHS - Student Life" value="rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com" checked="checked" />RHS - Student Life<br />
-                    <input type="checkbox" name="Summer Camps &amp; School" value="rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com" checked="checked" />Summer Camps &amp; School
+                    <label><input type="checkbox" name="RHS - Pastoral Life" value="rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com" checked="checked" />RHS - Pastoral Life</label><br />
+                    <label><input type="checkbox" name="RHS - Performing Arts" value="rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com" checked="checked" />RHS - Performing Arts</label><br />
+                    <label><input type="checkbox" name="RHS - Student Life" value="rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com" checked="checked" />RHS - Student Life</label><br />
+                    <label><input type="checkbox" name="Summer Camps &amp; School" value="rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com" checked="checked" />Summer Camps &amp; School</label>
                 </td>
             </tr>
         </tbody>
@@ -39,7 +39,7 @@
     function updateFrameSrc() {
         $('iframe').attr('src', getSource());
     }
-    
+
     function getSource() {
         var src = 'https://www.google.com/calendar/embed?';
         var cbs = $('input:checked');
