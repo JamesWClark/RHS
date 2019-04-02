@@ -11,7 +11,8 @@
  * https://github.com/JamesWClark/RHS/blob/master/CalendarFeeds/HomePage/daily-events-rhs-school-calendar.js
  * example json data: http://www.jsonmate.com/permalink/546a52ce8622dbdf0c422f93
  * another example:   http://www.jsonmate.com/permalink/546a796e8622dbdf0c422f95
- * Version 3
+ * Version 0.4
+ * - added new Athletics feed
  */
 
 //VARIABLES
@@ -32,17 +33,7 @@ var CALENDARS = [ //these are the IDs of each calendar, found under calendar set
      'rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com',    //Alumni
      'rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com',    //Faculty & Staff
      'rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com',    //Summer Camps & School
-     'rockhursths.edu_89fbs6i2rm7qncgk5ttjd95uao%40group.calendar.google.com',    //Basketball - Varsity
-     'rockhursths.edu_t8eq93kjsq5tklpnd1kke45pus%40group.calendar.google.com',    //Cross Country - Varsity
-     'rockhursths.edu_b2sg20067asnpm5bunlbk07hes%40group.calendar.google.com',    //Football - Varsity
-     'rockhursths.edu_017ca5s1pkqlo26p86sq0dqta0%40group.calendar.google.com',    //Soccer - Varsity
-     'rockhursths.edu_6r3vm39418qahh989qrhqn3hd4%40group.calendar.google.com',    //Swim & Dive - Varsity
-     'rockhursths.edu_fpdevts40susg3j1ueoubsrrt8%40group.calendar.google.com',    //Wrestling - Varsity
-     'rockhursths.edu_0d2i75kvpcgimrga4lfsihvod4%40group.calendar.google.com',    //Baseball - Varsity
-     'rockhursths.edu_qpnh3lidgqcdnjhjmk797igti4%40group.calendar.google.com',    //Golf - Varsity
-     'rockhursths.edu_t9rvkvj3jvq11s7u8269nsc14k%40group.calendar.google.com',    //Lacrosse - Varsity
-     'rockhursths.edu_odclime8l2bcmde6g8u856sn2s%40group.calendar.google.com',    //Tennis - Varsity
-     'rockhursths.edu_nrv610hprus0metm20otq39bks%40group.calendar.google.com'     //Track & Field - Varsity
+     'c4pcv378aei4lite7fuvh2fg5jqnm73h%40import.calendar.google.com'              //Athletics
 ];
 
 var feedsProcessedCount = 0;
