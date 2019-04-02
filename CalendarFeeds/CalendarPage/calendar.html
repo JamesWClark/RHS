@@ -1,10 +1,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<div>
-    <iframe id="rhs-master-calendar" frameborder="0" height="750" scrolling="no" src="https://www.google.com/calendar/embed?src=calendar%40rockhursths.edu&amp;src=rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com&amp;src=rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com&amp;src=rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com&amp;src=rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com&amp;src=rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com&amp;src=rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com&amp;src=rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com&amp;src=rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com&amp;src=rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com&amp;src=rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com&amp;src=rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com&amp;src=rockhursths.edu_89fbs6i2rm7qncgk5ttjd95uao%40group.calendar.google.com&amp;src=rockhursths.edu_t8eq93kjsq5tklpnd1kke45pus%40group.calendar.google.com&amp;src=rockhursths.edu_b2sg20067asnpm5bunlbk07hes%40group.calendar.google.com&amp;src=rockhursths.edu_017ca5s1pkqlo26p86sq0dqta0%40group.calendar.google.com&amp;src=rockhursths.edu_6r3vm39418qahh989qrhqn3hd4%40group.calendar.google.com&amp;src=rockhursths.edu_fpdevts40susg3j1ueoubsrrt8%40group.calendar.google.com&amp;src=rockhursths.edu_0d2i75kvpcgimrga4lfsihvod4%40group.calendar.google.com&amp;src=rockhursths.edu_qpnh3lidgqcdnjhjmk797igti4%40group.calendar.google.com&amp;src=rockhursths.edu_t9rvkvj3jvq11s7u8269nsc14k%40group.calendar.google.com&amp;src=rockhursths.edu_odclime8l2bcmde6g8u856sn2s%40group.calendar.google.com&amp;src=rockhursths.edu_nrv610hprus0metm20otq39bks%40group.calendar.google.com" style="border: 0;" width="100%"></iframe>
-</div>
 <p>
     <br />
-    <input type="button" value="Update Calendar" onclick="updateFrameSrc(); return false;">
+    <input type="button" value="Update View" onclick="updateFrameSrc(); return false;">
     <input type="button" value="Reset Calendar" type="submit">
     <input type="button" value="Clear Selections" onclick="clearSelections(); return false;">
 </p>
@@ -13,28 +10,39 @@
     <table cellpadding="0" cellspacing="0">
         <tbody>
             <tr>
-                <td width="33%">
-                    <label><input type="checkbox" name="RHS School Calendar" value="calendar%40rockhursths.edu" checked="checked" />RHS School Calendar</label><br />
-                    <label><input type="checkbox" name="RHS - Academics" value="rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com" checked="checked" />RHS - Academics</label><br />
-                    <label><input type="checkbox" name="RHS - Admissions" value="rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com" checked="checked" />RHS - Admissions</label><br />
-                    <label><input type="checkbox" name="RHS - Alumni" value="rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com" checked="checked" />RHS - Alumni</label><br />
+                <td width="20%">
+                    <label><input type="checkbox" name="School Calendar" value="calendar%40rockhursths.edu" checked="checked" />School Calendar</label><br />
+                    <label><input type="checkbox" name="Academics" value="rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com" checked="checked" />Academics</label><br />
+                    <label><input type="checkbox" name="Admissions" value="rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com" checked="checked" />Admissions</label><br />
+               </td>
+                <td width="20%">
+                    <label><input type="checkbox" name="Alumni" value="rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com" checked="checked" />Alumni</label><br />
+                    <label><input type="checkbox" name="Athletics" value="c4pcv378aei4lite7fuvh2fg5jqnm73h%40import.calendar.google.com&ctz=America%2FChicago" checked="checked">Athletics</label><br />
+                    <label><input type="checkbox" name="College Placement" value="rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com" checked="checked" />College Placement</label><br />
                 </td>
-                <td width="33%">
-                    <label><input type="checkbox" name="RHS - College Placement" value="rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com" checked="checked" />RHS - College Placement</label><br />
-                    <label><input type="checkbox" name="RHS - Faculty &amp; Staff" value="rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com" checked="checked" />RHS - Faculty &amp; Staff</label><br />
-                    <label><input type="checkbox" name="RHS - Ignatian Service" value="rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com" checked="checked" />RHS - Ignatian Service</label><br />
-                    <label><input type="checkbox" name="RHS - Parents" value="rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com" checked="checked" />RHS - Parents</label><br />
+                <td width="20%">
+                    <label><input type="checkbox" name="Pastoral Life" value="rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com" checked="checked" />Pastoral Life</label><br />
+                    <label><input type="checkbox" name="Ignatian Service" value="rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com" checked="checked" />Ignatian Service</label><br />
+                    <label><input type="checkbox" name="Parents" value="rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com" checked="checked" />Parents</label><br />                    
                 </td>
-                <td width="33%">
-                    <label><input type="checkbox" name="RHS - Pastoral Life" value="rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com" checked="checked" />RHS - Pastoral Life</label><br />
-                    <label><input type="checkbox" name="RHS - Performing Arts" value="rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com" checked="checked" />RHS - Performing Arts</label><br />
-                    <label><input type="checkbox" name="RHS - Student Life" value="rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com" checked="checked" />RHS - Student Life</label><br />
+                <td width="20%">
+                    <label><input type="checkbox" name="Performing Arts" value="rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com" checked="checked" />Performing Arts</label><br />
+                    <label><input type="checkbox" name="Student Life" value="rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com" checked="checked" />Student Life</label><br />
                     <label><input type="checkbox" name="Summer Camps &amp; School" value="rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com" checked="checked" />Summer Camps &amp; School</label>
+                </td>
+                <td width="20%">
+                    <label><input type="checkbox" name="Faculty &amp; Staff" value="rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com" checked="checked" />Faculty &amp; Staff</label><br />  
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+<p>&nbsp;</p>
+
+<div>
+    <iframe id="rhs-master-calendar" frameborder="0" height="750" scrolling="no" src="https://calendar.google.com/calendar/embed?src=calendar%40rockhursths.edu&src=rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com&src=rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com&src=rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com&src=rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com&src=rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com&src=rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com&src=rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com&src=rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com&src=rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com&src=rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com&src=rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com&src=rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com&src=c4pcv378aei4lite7fuvh2fg5jqnm73h%40import.calendar.google.com&ctz=America%2FChicago" style="border: 0;" width="100%"></iframe>
+</div>
+
 <script>
     function updateFrameSrc() {
         $('iframe').attr('src', getSource());
