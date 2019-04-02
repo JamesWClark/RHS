@@ -2,8 +2,8 @@
 <p>
     <br />
     <input type="button" value="Update View" onclick="updateFrameSrc(); return false;">
-    <input type="button" value="Reset Calendar" type="submit">
-    <input type="button" value="Clear Selections" onclick="clearSelections(); return false;">
+    <input type="button" value="Select All" onclick="selectAll(); return false;">
+    <input type="button" value="Clear All" onclick="clearAll(); return false;">
 </p>
 <p>&nbsp;</p>
 <div>
@@ -59,8 +59,12 @@
         src += 'src=' + $(cbs)[cbs.length - 1].value;
         return src;
     }
+    
+    function selectAll() {
+        $('input').prop('checked', true);
+    }
 
-    function clearSelections() {
+    function clearAll() {
         $('input').prop('checked', false);
     }
 
