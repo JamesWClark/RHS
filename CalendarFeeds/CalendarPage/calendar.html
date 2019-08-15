@@ -7,7 +7,7 @@ Admissions and Advancement -- green %2328754E
 -->
 
 <div>
-    <a id="direct-link" href="https://www.google.com/calendar/embed?src=calendar%40rockhursths.edu&color=%232952A3&src=rockhursths.edu_2vs1fiofi6ho9intt8a6cdpulc@group.calendar.google.com&color=%236B3304&src=c4pcv378aei4lite7fuvh2fg5jqnm73h%40import.calendar.google.com&ctz=America%2FChicago&color=%2388880E">Direct Link</a>
+    <a id="calendar-direct-link" href="https://www.google.com/calendar/embed?src=calendar%40rockhursths.edu&color=%232952A3&src=rockhursths.edu_2vs1fiofi6ho9intt8a6cdpulc@group.calendar.google.com&color=%236B3304&src=c4pcv378aei4lite7fuvh2fg5jqnm73h%40import.calendar.google.com&ctz=America%2FChicago&color=%2388880E">Direct Link</a>
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -59,7 +59,9 @@ Admissions and Advancement -- green %2328754E
 
 <script>
     function updateFrameSrc() {
-        $('iframe').attr('src', getSource());
+        var src = getSource();
+        $('iframe').attr('src', src);
+        $('#calendar-direct-link').attr('href', src);
     }
 
     function getSource() {
@@ -91,6 +93,7 @@ Admissions and Advancement -- green %2328754E
         $('input').prop('checked', false);
     }
 
+    /*
     //registers an event handler for calendar load, changes all 5:55 pm to TBD
     $(function () {
         var iframe = $('#rhs-master-calendar');
@@ -98,6 +101,7 @@ Admissions and Advancement -- green %2328754E
             iframe.contents().find('.te-t').text('TBD');
         });
     });
+    */
 </script>
 
 <style>
