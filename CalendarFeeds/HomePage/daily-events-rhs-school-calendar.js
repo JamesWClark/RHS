@@ -2,7 +2,7 @@
  * Daily Events by J.W. Clark
  * Published for Rockhurst High School
  * July 17, 2013
- * Updated November 17, 2014
+ * Updated August 16, 2019
  *
  * 1. get a series of feeds from a list of google calendars
  * 2. if today has less than 4 events, continue searching forward until at least 4 events are found.
