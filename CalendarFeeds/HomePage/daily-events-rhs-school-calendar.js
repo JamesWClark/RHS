@@ -21,19 +21,9 @@ var MINIMUM_EVENTS = 4;
 var DAYS_TO_SEARCH_FORWARD = 7;
 
 var CALENDARS = [ //these are the IDs of each calendar, found under calendar settings in a Google account's Calendar system
-     'calendar%40rockhursths.edu',                                                //School Calendar
-     'rockhursths.edu_vm6bt9h5uust4qkr1tqnkmtnac%40group.calendar.google.com',    //Academics
-     'rockhursths.edu_i0q5jb98knpj5otsfunnug130s%40group.calendar.google.com',    //Admissions
-     'rockhursths.edu_ofu8dje33m4sqnk8vndgpucj18%40group.calendar.google.com',    //College Placement
-     'rockhursths.edu_1g6c8cidfi6n2egc7pot13bqs4%40group.calendar.google.com',    //Ignatian Service
-     'rockhursths.edu_mpoj50ourh6q5qct7rt4541ce0%40group.calendar.google.com',    //Parents
-     'rockhursths.edu_mg0qisv0bjebtb6g03mukq6100%40group.calendar.google.com',    //Pastoral Life
-     'rockhursths.edu_ehaulvhli4eceq1r6i85m4ur8g%40group.calendar.google.com',    //Performing Arts
-     'rockhursths.edu_emstvmu50a5eulokqg749n1jrg%40group.calendar.google.com',    //Student Life
-     'rockhursths.edu_0rtqoob8p01fg51m36hfn6mf08%40group.calendar.google.com',    //Alumni
-     'rockhursths.edu_q5acu8rlb090te1ftbb0cv1fs4%40group.calendar.google.com',    //Faculty & Staff
-     'rockhursths.edu_s4dmspq8g7oh5beh4mho272mog%40group.calendar.google.com',    //Summer Camps & School
-     'c4pcv378aei4lite7fuvh2fg5jqnm73h%40import.calendar.google.com'              //Athletics
+     'calendar%40rockhursths.edu',                                                              //School Calendar
+     'rockhursths.edu_2vs1fiofi6ho9intt8a6cdpulc@group.calendar.google.com',                    //Daily Schedule
+     'c4pcv378aei4lite7fuvh2fg5jqnm73h%40import.calendar.google.com'                            //Athletics
 ];
 
 var feedsProcessedCount = 0;
