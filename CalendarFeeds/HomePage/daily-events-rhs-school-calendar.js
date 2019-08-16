@@ -42,6 +42,7 @@ $(document).ready(init());
 function init() {
     getCalendarFeeds();
 }
+
 function getCalendarFeeds() {
     for (var i = 0; i < CALENDARS.length; i++) {
         var https = 'https://www.googleapis.com/calendar/v3/calendars/' + CALENDARS[i] + '/events?singleEvents=true&orderBy=startTime&sortOrder=ascending&timeMin=' + moment(startMin).format() + '&timeMax=' + moment(startMax).format() + '&key=' + KEY;
@@ -73,10 +74,12 @@ function processFeed(feed) {
         printEntries();
     }
 }
+
 function processEntry(entry) {
     var e = getEntryBase(entry);
     entries.push(e);
 }
+
 //i had to change the right side of these equations for v3
 function getEntryBase(entry) {
     var e = {};
@@ -99,6 +102,7 @@ function getEntryBase(entry) {
     }
     return e;
 }
+
 function printEntries() {
     sortEntries(entries);
     var count = 0;
@@ -114,6 +118,7 @@ function printEntries() {
         }
     }
 }
+
 function sortEntries(entries) {
     entries.sort(function (a, b) {
         var x = a.startTime;
@@ -121,6 +126,7 @@ function sortEntries(entries) {
         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
 }
+
 function writeHtml(entry) {
     //this function writes HTML to the DOM on a per calendar entry basis
     //modify the object in the processEntry() method before pulling its properties here
@@ -135,28 +141,7 @@ function writeHtml(entry) {
 
     $('#rhs-home-daily-events-feed-results > tbody:last').append(html);
 }
-//start and finish will have one of two formats:
-//2013-11-16T13:32:22-06:00         ISO Format
-//2013-11-16                        YYYY-MM-DD
-function getTimeHtml(start, finish) {
-    //check if ISO
-    var sIndexT = start.indexOf('T');
-    var fIndexT = finish.indexOf('T');
-    var sMoment = moment(start);
-    var fMoment = moment(finish);
 
-    if (fMoment.diff(sMoment, 'days') === 1 && sIndexT === -1) { //single all day event, no times
-        return sMoment.format('YYYY-MM-DD');
-    } else if (fMoment.diff(sMoment, 'days') === 0 && sIndexT !== -1) { //single day, span of time
-        if (sMoment.format('h:mm a') === fMoment.format('h:mm a')) //start and finish time are the same, no need to show twice (reader will treat this as event with start time only)
-            return sMoment.format('YYYY-MM-DD') + ', ' + sMoment.format('h:mm a');
-        else
-            return sMoment.format('YYYY-MM-DD') + ', ' + sMoment.format('h:mm a') + ' to ' + fMoment.format('h:mm a');
-    } else if (sMoment.format('YYYY-MM-DD') !== fMoment.format('YYYY-MM-DD') && sIndexT !== -1) { //span across dates + start and finish time
-        return sMoment.format('YYYY-MM-DD') + ', ' + sMoment.format('h:mm a') + ' to ' + fMoment.format('YYYY-MM-DD') + ', ' + fMoment.format('h:mm a');
-    } else //a span of 24-hour events, midnight to midnight (like School & Offices closed over a three day period)
-        return sMoment.format('YYYY-MM-DD') + ' to ' + fMoment.format('YYYY-MM-DD');
-}
 //start and finish will have one of two formats:
 //2013-11-16T13:32:22-06:00         ISO Format
 //2013-11-16                        YYYY-MM-DD
